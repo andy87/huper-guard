@@ -482,7 +482,10 @@ h3:before {
   width: 262px;
   padding: 25px 15px;
   overflow: hidden;
-  background: #000c23;
+  background-color: #000c23;
+}
+.b_benefit--item:hover {
+  background: url("/img/hover.png") #000c23 left bottom no-repeat;
 }
 .b_benefit--item:nth-child(1) .b_benefit--ball {
   top: 15px;
@@ -602,10 +605,10 @@ h3:before {
   width: 262px;
   padding-top: 25px;
   overflow: hidden;
-  background: #001331;
+  background-color: #001331;
 }
 .b_product--item:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background: url("/img/hover.png") #001331 0 70px no-repeat;
 }
 .b_product--item:hover .b_product--img {
   top: -5px;

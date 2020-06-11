@@ -373,7 +373,7 @@
 
                 <div class="block__calc" style="height: 952px">
 
-                    <div class="wrapper none">
+                    <div class="wrapper">
 
                         <div class="b_calc--overlay __left">
 

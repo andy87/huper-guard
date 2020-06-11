@@ -379,23 +379,23 @@
 
                             <img class="b_calc--img" src="/img/server.gif" alt="Картинка сервера">
 
-                            <h6 class="b_calc--title">Шаблоны конфигураций:</h6>
+                            <h6 class="b_calc--title" >Шаблоны конфигураций:</h6>
 
-                            <div class="b_calc--layout">
+                            <div class="block__config">
 
-                                <button class="b_calc--button">
-                                    <div class="b_calc--header">DS #5</div>
-                                    <div class="b_calc--description">Мощное решение для серьезных задач.</div>
+                                <button class="b_config--button">
+                                    <div class="b_config--header">DS #5</div>
+                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
                                 </button>
 
-                                <button class="b_calc--button">
-                                    <div class="b_calc--header">DS #5</div>
-                                    <div class="b_calc--description">Мощное решение для серьезных задач.</div>
+                                <button class="b_config--button __active color">
+                                    <div class="b_config--header">DS #5</div>
+                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
                                 </button>
 
-                                <button class="b_calc--button">
-                                    <div class="b_calc--header">DS #5</div>
-                                    <div class="b_calc--description">Мощное решение для серьезных задач.</div>
+                                <button class="b_config--button">
+                                    <div class="b_config--header">DS #5</div>
+                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
                                 </button>
 
                             </div>

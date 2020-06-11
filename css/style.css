@@ -140,7 +140,7 @@ BODY {
   font-family: 'Montserrat', sans-serif;
 }
 h2 {
-  color: #fff;
+  color: white;
   line-height: 40px;
   font-size: 36px;
   font-weight: 800;
@@ -149,7 +149,7 @@ h3 {
   position: relative;
   display: block;
   padding-top: 4px;
-  color: #FFF;
+  color: white;
   line-height: 29px;
   font-size: 24px;
   font-weight: 800;
@@ -165,6 +165,13 @@ h3:before {
   font-size: 15px;
   font-weight: bold;
   z-index: -1;
+}
+H6 {
+  display: block;
+  color: white;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
 }
 #wrap {
   position: relative;
@@ -196,7 +203,7 @@ h3:before {
 .button {
   display: inline-block;
   padding: 15px 25px;
-  color: #fff;
+  color: white;
   line-height: 21px;
   font-size: 14px;
   text-transform: uppercase;
@@ -391,7 +398,7 @@ h3:before {
 .b_menu--link {
   display: block;
   padding: 0 25px;
-  color: #FFF;
+  color: white;
   line-height: 40px;
   font-size: 14px;
   font-weight: 400;
@@ -410,7 +417,7 @@ h3:before {
 .b_welcome--title {
   display: inline-block;
   margin: 125px 0 0 0;
-  color: #FFF;
+  color: white;
   line-height: 63px;
   font-size: 54px;
   font-weight: 900;
@@ -524,7 +531,7 @@ h3:before {
 .b_benefit--title {
   display: block;
   padding: 0 20px;
-  color: #fff;
+  color: white;
   line-height: 26px;
   font-size: 22px;
   font-weight: 700;
@@ -625,7 +632,7 @@ h3:before {
   display: block;
   margin-top: 10px;
   padding-left: 15px;
-  color: #fff;
+  color: white;
   line-height: 30px;
   font-size: 22px;
   font-weight: 700;
@@ -647,7 +654,7 @@ h3:before {
   width: 100%;
   margin-top: 20px;
   padding: 11px 0;
-  color: #FFF;
+  color: white;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -674,34 +681,75 @@ h3:before {
 }
 .b_property--value {
   display: inline-block;
-  color: #fff;
+  color: white;
 }
 .block__calc {
   display: block;
+  font-size: 0;
 }
 .b_calc--overlay {
-  display: block;
+  display: inline-block;
+}
+.b_calc--overlay.__left {
+  padding-top: 45px;
+  width: 40.5%;
+}
+.b_calc--overlay.__right {
+  width: 59.5%;
 }
 .b_calc--img {
+  position: relative;
+  left: -425px;
   display: block;
 }
 .b_calc--title {
   display: block;
+  margin: 6px 0;
 }
 .b_calc--layout {
   display: block;
 }
-.b_calc--button {
-  display: block;
-}
-.b_calc--header {
-  display: block;
-}
-.b_calc--description {
-  display: block;
-}
 .b_calc--decor {
   display: block;
+}
+.block__config {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.b_config--button {
+  display: block;
+  width: 147px;
+  height: 130px;
+  background: #11263e;
+  border: 1px solid #091e35;
+  cursor: pointer;
+}
+.b_config--button:hover,
+.b_config--button.__active {
+  background: #0b3f8d;
+  background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
+}
+.b_config--button:hover .b_config--header,
+.b_config--button.__active .b_config--header {
+  color: white;
+}
+.b_config--header {
+  display: block;
+  padding: 8px;
+  color: #1d5cac;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  border-bottom: none;
+  border-radius: 0;
+}
+.b_config--description {
+  display: block;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
 }
 .block__form {
   display: block;

@@ -1,0 +1,43 @@
+.block__config{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.b_config--button {
+  display: block;
+  width: 147px;
+  height: 130px;
+  background: #11263e;
+  border: 1px solid #091e35;
+  cursor: pointer;
+
+  &:hover,
+  &.__active {
+    .b_config--header {
+      color: white;
+    }
+    background: rgb( 11, 63, 141 );
+    background: linear-gradient( 45deg, rgba( 11, 63, 141, 1 ) 0%, rgba( 37, 105, 185, 1 ) 100% );
+  }
+}
+
+.b_config--header {
+  display: block;
+  padding: 8px;
+  color: #1d5cac;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  border-bottom:none;
+  border-radius: 0;
+
+}
+
+.b_config--description {
+  display: block;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+}

@@ -406,12 +406,14 @@
 
                             <div class="b_calc--layout">
                                 <h3>Конфигуратор<br>сервера</h3>
-                                <a class="color button __border">Показать все</a>
+                                <a class="color button __border">
+                                    <span>Индивидуальная</span>
+                                </a>
                             </div>
 
                             <div class="b_calc--layout">
 
-                                <form class="block__form" action="/" method="post">
+                                <form class="block__form __calc" action="/" method="post">
 
                                     <div class="b_form--row">
 
@@ -422,20 +424,20 @@
 
                                     <div class="b_form--row">
 
-                                        <h6 class="b_form--title">
-                                            Дата-центр:
-                                        </h6>
+                                        <h6 class="b_form--title"> Дата-центр: </h6>
 
                                         <div class="b_form--radio __inline">
+
                                             <label class="b_form--label">
                                                 <input type="radio" name="data_center">
-                                                <span>NAMESERVER (MSK)</span>
+                                                <span> NAMESERVER (MSK) </span>
                                             </label>
 
                                             <label class="b_form--label">
                                                 <input type="radio" name="data_center">
-                                                <span>NAMESERVER (MSK)</span>
+                                                <span> NAMESERVER (MSK) </span>
                                             </label>
+
                                         </div>
 
                                     </div>
@@ -446,13 +448,13 @@
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
-                                            <div class="block__slider">
+                                            <div class="block__range">
 
                                             </div>
                                         </div>
 
-                                        <label class="b_form--layout" style="width: 20%">
-                                            <input type="text" name="slider" id="form_slider">
+                                        <label class="b_form--layout __padding" style="width: 20%">
+                                            <input class="b_form--input" type="text" name="slider" value="48" id="form_slider">
                                         </label>
 
                                     </div>
@@ -477,7 +479,7 @@
 
                                     <div class="b_form--row">
 
-                                        <div class="b_form--radio">
+                                        <div class="b_form--radio __margin">
 
                                             <div class="b_form--layout">
                                                 <label class="b_form--label">
@@ -492,11 +494,11 @@
 
                                             <div class="b_form--layout">
                                                 <label class="b_form--label">
-                                                    <input type="radio" name="data_center" checked>
+                                                    <input type="radio" name="data_center_2" checked>
                                                     <span>Включить что то?</span>
                                                 </label>
                                                 <label class="b_form--label">
-                                                    <input type="radio" name="data_center">
+                                                    <input type="radio" name="data_center_2">
                                                     <span>Включить что то?</span>
                                                 </label>
                                             </div>
@@ -507,31 +509,31 @@
 
                                     <div class="b_form--row">
 
-                                        <div class="b_form--layout" style="width: 70%">
+                                        <div class="b_form--layout" style="width: 67%">
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
                                             <div class="block__slider"></div>
                                         </div>
 
-                                        <label class="b_form--layout" style="width: 30%">
-                                            <input type="text" name="slider">
+                                        <label class="b_form--layout __padding" style="width: 33%">
+                                            <input class="b_form--input" type="text" name="slider">
                                         </label>
 
                                     </div>
 
                                     <div class="b_form--row">
 
-                                        <div class="b_form--layout" style="width: 35%">
+                                        <div class="b_form--layout" style="width: 30%">
                                             <select class="b_form--select">
-                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                                                <option>2 МЕСЯЦА</option>
+                                                <option>3 МЕСЯЦА</option>
+                                                <option>4 МЕСЯЦА</option>
                                             </select>
                                         </div>
 
-                                        <div class="b_form--layout" style="width: 65%">
-                                            <a class="b_form--button" href="#">
+                                        <div class="b_form--layout" style="width: 70%">
+                                            <a class="b_form--button color" href="#">
                                                 Заказать за <span id="total_price">500</span> RUB
                                             </a>
                                         </div>

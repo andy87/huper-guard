@@ -59,8 +59,6 @@
 
         </div>
 
-        <span class="b_footer--decor"></span>
-
     </div>
 
 </div>

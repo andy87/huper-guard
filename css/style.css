@@ -167,6 +167,7 @@ h3:before {
   z-index: -1;
 }
 #wrap {
+  position: relative;
   min-height: 100% !important;
 }
 #footer {
@@ -223,6 +224,49 @@ h3:before {
 .button.__border.__lg > SPAN {
   padding: 14px 46px;
   font-size: 15px;
+}
+.decor--arrow {
+  position: absolute;
+  display: inline-block;
+  top: auto;
+  animation: linear 20s slow_right infinite;
+}
+.decor--arrow.__right {
+  bottom: -1.7%;
+  left: 5.75%;
+}
+.decor--arrow.__left {
+  bottom: 25.45%;
+  right: 8%;
+  animation-name: slow_left;
+}
+@keyframes slow_left {
+  from {
+    bottom: 25.45%;
+  }
+  33% {
+    bottom: 26.45%;
+  }
+  66% {
+    bottom: 24.45%;
+  }
+  to {
+    bottom: 25.45%;
+  }
+}
+@keyframes slow_right {
+  from {
+    bottom: -1.7%;
+  }
+  33% {
+    bottom: -2.7%;
+  }
+  66% {
+    bottom: -0.7%;
+  }
+  to {
+    bottom: -1.7%;
+  }
 }
 .block__header {
   display: block;

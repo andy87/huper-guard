@@ -546,9 +546,6 @@
 
                     </div>
 
-
-                    <span class="b_calc--decor"></span>
-
                 </div>
 
                 <div class="block__partners">
@@ -628,6 +625,9 @@
                 </div>
 
             </div>
+
+            <img class="decor--arrow __right" src="/img/decor/arrows.png">
+            <img class="decor--arrow __left" src="/img/decor/arrows.png">
 
         </div>
 

@@ -1,4 +1,4 @@
-<div class="block__modal">
+<div class="block__modal none">
 
     <div class="b_modal--overlay"></div>
 

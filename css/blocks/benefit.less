@@ -1,0 +1,85 @@
+.block__benefit {
+  display: block;
+}
+
+.b_benefit--wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.b_benefit--item {
+  position: relative;
+  display: inline-block;
+  width: 262px;
+  padding: 25px 15px;
+  overflow: hidden;
+  background: #000c23;
+
+  &:nth-child(1) .b_benefit--ball {
+    top: 15px;
+    left: 60px;
+  }
+  &:nth-child(2) .b_benefit--ball {
+    top: 45px;
+    left: 120px;
+  }
+  &:nth-child(3) .b_benefit--ball {
+    top: 60px;
+    left: 65px;
+  }
+  &:nth-child(4) .b_benefit--ball {
+    top: 30px;
+    left: 100px;
+  }
+}
+
+.b_benefit--ball {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  height: 85px;
+  width: auto;
+  top: 0;
+  left: 0;
+}
+
+.b_benefit--icon {
+  position: relative;
+  z-index: 5;
+  display: block;
+  margin: 5px auto;
+  max-height: 105px;
+  width: auto;
+  max-width: 110px;
+}
+
+.b_benefit--title {
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  line-height: 26px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.b_benefit--text {
+  display: block;
+  margin: 10px 0;
+  max-height: 50px;
+  overflow: hidden;
+  color: #71859d;
+  line-height: 16px;
+  font-size: 13px;
+}
+
+.b_benefit--img {
+  position: absolute;
+  display: block;
+  height: 300px;
+  width: 300px;
+  top: 35px;
+  right: -110px;
+  opacity: .05;
+}

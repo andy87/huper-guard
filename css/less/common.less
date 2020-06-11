@@ -14,6 +14,12 @@ BODY {
 }
 
 h2 {
+  color: #fff;
+  line-height: 40px;
+  font-size: 36px;
+  font-weight: 800;
+}
+h3 {
   position: relative;
   display: block;
   padding-top: 4px;
@@ -49,13 +55,9 @@ h2 {
 #content {
   padding-bottom: 50px;
 }
-#content > * {
-  width: 1140px;
-  margin: 0 auto;
 
-  &.__full{
-    width: 100%;
-  }
+.none {
+  display: none !important;
 }
 
 .color {
@@ -63,6 +65,12 @@ h2 {
   border-bottom: 1px solid rgba( 0, 0, 0, .2 );
   background: rgb( 11, 63, 141 );
   background: linear-gradient( 45deg, rgba( 11, 63, 141, 1 ) 0%, rgba( 37, 105, 185, 1 ) 100% );
+}
+
+.wrapper {
+  display: block;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 .button {
@@ -89,6 +97,7 @@ h2 {
     & > SPAN {
       display: inline-block;
       background: #011b3a;
+      padding: 10px 20px
     }
 
     &.__sm > SPAN {

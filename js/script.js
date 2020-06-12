@@ -24,12 +24,12 @@ $(document).ready(function ()
         });
     }
 
-    var limits, $parallax = $('#parallax');
+    var limits, $parallaxItem = $('#parallax');
 
-    if ( $parallax.length )
+    if ( $parallaxItem.length )
     {
-        let top     = parseInt( $parallax.css('top') ),
-            left    = parseInt( $parallax.css('left') );
+        let top     = parseInt( $parallaxItem.css('top') ),
+            left    = parseInt( $parallaxItem.css('left') );
 
         limits = {
             top     : {
@@ -59,12 +59,10 @@ $(document).ready(function ()
                 x = limits.left.min + ( ( limits.left.max - limits.left.min ) * x );
                 y = limits.top.min + ( ( limits.top.max - limits.top.min ) * y );
 
-            $parallax.css({
+            $parallaxItem.css({
                 top     : y,
                 left    : x,
             });
-
         });
     }
-
 });

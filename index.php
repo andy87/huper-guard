@@ -45,10 +45,10 @@
                                 </p>
 
                                 <div class="b_welcome--toolbar">
-                                    <a class="color button __lg">
+                                    <a class="color button __lg" href="/">
                                         Наши услуги
                                     </a>
-                                    <a class="color button __border __lg">
+                                    <a class="color button __border __lg" href="/">
                                         <span>Контакты</span>
                                     </a>
                                 </div>
@@ -173,7 +173,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color">
+                                    <a class="b_product--button color" href="/">
                                         Купить за 5000₽
                                     </a>
 
@@ -232,7 +232,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color">
+                                    <a class="b_product--button color" href="/">
                                         Купить за 5000₽
                                     </a>
 
@@ -291,7 +291,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color">
+                                    <a class="b_product--button color" href="/">
                                         Купить за 5000₽
                                     </a>
 
@@ -350,7 +350,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color">
+                                    <a class="b_product--button color" href="/">
                                         Купить за 5000₽
                                     </a>
 
@@ -361,7 +361,7 @@
                         </div>
 
                         <div class="b_service--layout">
-                            <a class="color button __border">
+                            <a class="color button __border" href="/">
                                 <span>Показать все</span>
                             </a>
                         </div>
@@ -406,7 +406,7 @@
 
                             <div class="b_calc--layout">
                                 <h3>Конфигуратор<br>сервера</h3>
-                                <a class="color button __border">
+                                <a class="color button __border" href="/">
                                     <span>Индивидуальная</span>
                                 </a>
                             </div>
@@ -429,12 +429,12 @@
                                         <div class="b_form--radio __inline">
 
                                             <label class="b_form--label">
-                                                <input type="radio" name="data_center">
+                                                <input type="radio" name="name_server" checked>
                                                 <span> NAMESERVER (MSK) </span>
                                             </label>
 
                                             <label class="b_form--label">
-                                                <input type="radio" name="data_center">
+                                                <input type="radio" name="name_server">
                                                 <span> NAMESERVER (MSK) </span>
                                             </label>
 

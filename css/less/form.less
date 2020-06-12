@@ -60,7 +60,11 @@
     position: relative;
     margin-bottom: 20px;
 
-    INPUT[type="radio"]{ display: none }
+    INPUT[type="radio"]{
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
 
     INPUT + SPAN {
       display: inline-block;
@@ -87,6 +91,9 @@
     INPUT:checked + SPAN:before {
       background-position: top center;
     }
+    INPUT:focus + SPAN {
+      text-decoration: underline;
+    }
   }
 
   &.__inline {
@@ -111,11 +118,16 @@
         color: #1a57a6;
       }
 
-      & > INPUT:checked + SPAN,
+      INPUT:checked + SPAN,
       &:hover > INPUT:checked + SPAN {
         color: #fff;
-        background: rgb( 11, 63, 141 );
+        background: #0B3F8D;
         background: linear-gradient( 45deg, rgba( 11, 63, 141, 1 ) 0%, rgba( 37, 105, 185, 1 ) 100% );
+      }
+
+      INPUT:focus + SPAN {
+        color: #0B3F8D;
+        background: white;
       }
     }
   }
@@ -200,10 +212,11 @@
       border-color: #011b3a;
     }
   }
-}
+  }
 
 .b_form--label {
   display: block;
+  cursor: pointer;
 }
 
 .b_form--button {

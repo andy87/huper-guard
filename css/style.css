@@ -831,7 +831,9 @@ H6 {
   margin-bottom: 20px;
 }
 .b_form--radio .b_form--label INPUT[type="radio"] {
-  display: none;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
 .b_form--radio .b_form--label INPUT + SPAN {
   display: inline-block;
@@ -856,6 +858,9 @@ H6 {
 .b_form--radio .b_form--label INPUT:checked + SPAN:before {
   background-position: top center;
 }
+.b_form--radio .b_form--label INPUT:focus + SPAN {
+  text-decoration: underline;
+}
 .b_form--radio.__inline {
   display: block;
 }
@@ -877,11 +882,15 @@ H6 {
   background: white;
   color: #1a57a6;
 }
-.b_form--radio.__inline .b_form--label > INPUT:checked + SPAN,
+.b_form--radio.__inline .b_form--label INPUT:checked + SPAN,
 .b_form--radio.__inline .b_form--label:hover > INPUT:checked + SPAN {
   color: #fff;
-  background: #0b3f8d;
+  background: #0B3F8D;
   background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
+}
+.b_form--radio.__inline .b_form--label INPUT:focus + SPAN {
+  color: #0B3F8D;
+  background: white;
 }
 .b_form--input {
   display: block;
@@ -958,6 +967,7 @@ H6 {
 }
 .b_form--label {
   display: block;
+  cursor: pointer;
 }
 .b_form--button {
   display: block;

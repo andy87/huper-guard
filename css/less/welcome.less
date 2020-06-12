@@ -30,6 +30,7 @@
     }
   }
 }
+
 .b_welcome--text {
   display: block;
   width: 550px;
@@ -40,6 +41,7 @@
   font-size: 14px;
   overflow: hidden;
 }
+
 .b_welcome--toolbar {
   display: inline-block;
   margin: 35px 20px 0 0;
@@ -48,10 +50,12 @@
     margin-right: 15px;
   }
 }
+
 .b_welcome--layout{
   position: relative;
   z-index: 9;
 }
+
 .b_welcome--overlay{
   position: absolute;
   z-index: 8;
@@ -62,9 +66,54 @@
   overflow: hidden;
   border-radius: 0 0 ~"965px/165px" 0;
 }
+
 .b_welcome--img {
   position: absolute;
   top: 15%;
   left: 50%;
   display: inline-block;
+}
+@media (max-width: 1900px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"65%/7.5%" 0;
+  }
+}
+@media (max-width: 1730px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"65%/11.5%" 0;
+  }
+}
+@media (max-width: 1660px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"65%/9.5%" 0;
+  }
+}
+@media (max-width: 1500px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"55%/9.7%" 0;
+  }
+}
+@media (max-width: 1440px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"55%/8.2%" 0;
+  }
+}
+@media (max-width: 1400px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"60%/7.8%" 0;
+  }
+}
+@media ( max-width: 1280px) {
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"55%/6%" 0;
+  }
+}
+@media (max-width: 1140px) {
+  .b_welcome--img {
+    top: 15% !important;
+    left: 50% !important;
+  }
+  .b_welcome--overlay {
+    border-radius: 0 0 ~"65%/4.5%" 0;
+  }
 }

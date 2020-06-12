@@ -448,8 +448,8 @@
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
-                                            <div class="block__range">
-
+                                            <div class="block__range ">
+                                                <input type="range" name="range_1">
                                             </div>
                                         </div>
 
@@ -520,7 +520,9 @@
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
-                                            <div class="block__slider"></div>
+                                            <div class="block__range">
+                                                <input type="range" name="range_2">
+                                            </div>
                                         </div>
 
                                         <label class="b_form--layout __padding" style="width: 33%">

@@ -48,9 +48,11 @@ $(document).ready(function ()
         {
             let $w = $(this),
                 width   = $w.width(),
-                height  = $w.height(),
+                height  = $w.height();
 
-                cursor_x = e.clientX,
+            if ( width < 1140 ) return;
+
+            let cursor_x = e.clientX,
                 cursor_y = e.clientY,
 
                 x = ( cursor_x / ( width / 100 ) / 100 ),

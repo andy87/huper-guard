@@ -1032,6 +1032,18 @@ H6 {
 .block__range .slider {
   width: 100% !important;
 }
+.block__range .slider.slider-horizontal .slider-track {
+  height: 8px;
+  background: #0a223e;
+}
+.block__range .slider .slider-selection {
+  background: radial-gradient(ellipse at center, #2366b6 0%, #0d4290 100%);
+}
+.block__range .slider .round {
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(ellipse at center, #2366b6 0%, #0d4290 100%);
+}
 .block__partners {
   display: block;
 }

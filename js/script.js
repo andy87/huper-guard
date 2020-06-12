@@ -24,7 +24,7 @@ $(document).ready(function ()
         });
     }
 
-    var limits, $parallaxItem = $('#parallax');
+    let limits, $parallaxItem = $('#parallax');
 
     if ( $parallaxItem.length )
     {
@@ -68,19 +68,43 @@ $(document).ready(function ()
         });
     }
 
-    var $sliders = $('INPUT[type="range"]');
+    window.sliders = {};
+
+    let $sliders    = $('INPUT[type="range"]');
 
     if ( $sliders.length )
     {
-        $sliders.slider({
-            step: 1,
-        }).on('change', function (e, a, b)
+        $sliders.each(function (i, element)
         {
-            console.log('e', e);
-            console.log('a', a);
-            console.log('b', b);
+            let $this = $(element);
+
+            window.sliders[ $this.attr('name') ] = $this.slider();
+
+            window.sliders[ $this.attr('name') ].on("slide", function (e)
+                {
+                    let $this       = $( this ),
+                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
+
+                    $( selector ).val( e.value ).change();
+                });
         });
 
-    }
+        let $inputs = $('.b_form--input');
 
+        if ( $inputs.length )
+        {
+            $('.b_form--input.range').change(function (e)
+            {
+                let $this = $(this),
+                    value = $this.val().replace(/\s/g, '');
+
+                //спасибо ciprex_
+                let result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+                $this.val( result );
+
+                window.sliders[ $this.data('target') ].slider('setValue', value);
+            });
+        }
+    }
 });

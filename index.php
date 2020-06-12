@@ -448,13 +448,24 @@
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
-                                            <div class="block__range ">
-                                                <input type="range" name="range_1" data-min="1" data-max="100">
-                                            </div>
+                                            <label class="block__range ">
+                                                <input type="range"
+                                                       name="range_1"
+                                                       data-slider-step="1"
+                                                       data-slider-value="48"
+                                                       data-slider-min="1"
+                                                       data-slider-max="100"
+                                                       data-target="name_slider_1">
+                                            </label>
                                         </div>
 
                                         <label class="b_form--layout __padding" style="width: 20%">
-                                            <input class="b_form--input" type="text" name="slider" value="48" id="form_slider">
+                                            <input class="b_form--input range"
+                                                   type="text"
+                                                   name="name_slider_1"
+                                                   value="48"
+                                                   id="form_slider"
+                                                   data-target="range_2">
                                         </label>
 
                                     </div>
@@ -520,13 +531,23 @@
                                             <h6 class="b_form--title">
                                                 Заголовок ползунука:
                                             </h6>
-                                            <div class="block__range">
-                                                <input type="range" name="range_2">
-                                            </div>
+                                            <label class="block__range">
+                                                <input type="range"
+                                                       name="range_2"
+                                                       data-slider-step="100"
+                                                       data-slider-value="3500"
+                                                       data-slider-min="1"
+                                                       data-slider-max="10000"
+                                                       data-target="name_slider_2">
+                                            </label>
                                         </div>
 
                                         <label class="b_form--layout __padding" style="width: 33%">
-                                            <input class="b_form--input" type="text" name="slider" data-min="1" data-max="100">
+                                            <input class="b_form--input range"
+                                                   type="text"
+                                                   value="3 500"
+                                                   name="name_slider_2"
+                                                   data-target="range_2">
                                         </label>
 
                                     </div>

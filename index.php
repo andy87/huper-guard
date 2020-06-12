@@ -29,7 +29,7 @@
                         <div class="block__welcome">
 
                             <div class="b_welcome--overlay">
-                                <img class="b_welcome--img" src="/img/main.png" alt="Сервер">
+                                <img class="b_welcome--img" src="/img/main.png" id="parallax" alt="Сервер">
                             </div>
 
                             <div class="b_welcome--layout">

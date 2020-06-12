@@ -24,4 +24,47 @@ $(document).ready(function ()
         });
     }
 
+    var limits, $parallax = $('#parallax');
+
+    if ( $parallax.length )
+    {
+        let top     = parseInt( $parallax.css('top') ),
+            left    = parseInt( $parallax.css('left') );
+
+        limits = {
+            top     : {
+                center  : top,
+                min     : top,
+                max     : top + 50
+            },
+            left    : {
+                center  : left,
+                min     : left - 50,
+                max     : left + 50
+            },
+        };
+
+        $(window).on('mousemove', function (e)
+        {
+            let $w = $(this),
+                width   = $w.width(),
+                height  = $w.height(),
+
+                cursor_x = e.clientX,
+                cursor_y = e.clientY,
+
+                x = ( cursor_x / ( width / 100 ) / 100 ),
+                y = ( cursor_y / ( height / 100 ) / 100 );
+
+                x = limits.left.min + ( ( limits.left.max - limits.left.min ) * x );
+                y = limits.top.min + ( ( limits.top.max - limits.top.min ) * y );
+
+            $parallax.css({
+                top     : y,
+                left    : x,
+            });
+
+        });
+    }
+
 });

@@ -16,7 +16,7 @@
 }
 .b_config--header:hover {
   border-color: #072957;
-  background: url("/img/hover.png") #001331 0 70px no-repeat;
+  background: url("/img/hover.png") #001331 0 71px no-repeat;
 }
 .b_config--header.color {
   color: white;

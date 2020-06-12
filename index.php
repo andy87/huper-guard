@@ -7,7 +7,7 @@
         <? include "page/head.php" ?>
     </head>
 
-    <body style="background: url('/img/design/1.png') transparent center top no-repeat">
+    <body>
 
         <div id="wrap">
 
@@ -388,7 +388,7 @@
                                     <div class="b_config--description">Мощное решение для серьезных задач.</div>
                                 </button>
 
-                                <button class="b_config--button __active color">
+                                <button class="b_config--button">
                                     <div class="b_config--header">DS #5</div>
                                     <div class="b_config--description">Мощное решение для серьезных задач.</div>
                                 </button>

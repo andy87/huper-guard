@@ -6,7 +6,7 @@
 
             <div class="wrapper">
                 <div class="b_footer--layout __left">
-                    <h3>Следи за нами </h3>
+                    <h4 style="margin-top: 70px;">Следи <br>за нами </h4>
                 </div>
 
                 <div class="b_footer--layout __right">
@@ -35,16 +35,16 @@
 
             <div class="wrapper">
 
-                <div class="b_footer--layout __left">
-                    <h6>HyperGuard.com</h6>
-                    <span>© ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+                <div class="b_footer--layout">
+                    <h5 style="margin-top: 20px">HyperGuard.com</h5>
+                    <span class="b_footer--text">© ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
                 </div>
 
-                <div class="b_footer--layout">
+                <div class="b_footer--layout __center">
                     <img class="b_footer--logo" src="/img/logo_footer.png" alt="Лого">
                 </div>
 
-                <div class="b_footer--layout __right">
+                <div class="b_footer--layout">
                     <img class="b_footer--img" src="/img/studio.png" alt="Студия дизайна">
                 </div>
             </div>
@@ -55,11 +55,11 @@
 
             <div class="wrapper">
 
-                <div class="b_footer--layout __left">
+                <div class="b_footer--layout">
                     <a class="b_footer--link" href="mailto:support@yousite.com">support@yousite.com</a>
                 </div>
 
-                <div class="b_footer--layout __right">
+                <div class="b_footer--layout">
                     <a class="b_footer--link __small" href="/">Пользовательское соглашение</a>
                     <a class="b_footer--link __small" href="/">Офферта</a>
                 </div>

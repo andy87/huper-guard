@@ -133,7 +133,7 @@ BODY {
   min-height: 100% !important;
 }
 BODY {
-  background-image: url("/img/background/site.jpg");
+  background-image: url("/img/background/site.png");
   background-repeat: repeat-y;
   background-position: center top;
   background-size: cover;
@@ -165,6 +165,20 @@ h3:before {
   font-size: 15px;
   font-weight: bold;
   z-index: -1;
+}
+H4 {
+  display: block;
+  color: white;
+  line-height: 38px;
+  font-size: 36px;
+  font-weight: 900;
+}
+H5 {
+  display: block;
+  color: white;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 700;
 }
 H6 {
   display: block;
@@ -234,45 +248,46 @@ H6 {
 }
 .decor--arrow {
   position: absolute;
+  z-index: 10;
   display: inline-block;
   top: auto;
   animation: linear 20s slow_right infinite;
 }
 .decor--arrow.__right {
-  bottom: -1.7%;
+  bottom: 7.6%;
   left: 5.75%;
 }
 .decor--arrow.__left {
-  bottom: 25.45%;
+  bottom: 32.45%;
   right: 8%;
   animation-name: slow_left;
 }
 @keyframes slow_left {
   from {
-    bottom: 25.45%;
+    bottom: 32.45%;
   }
   33% {
-    bottom: 26.45%;
+    bottom: 33.45%;
   }
   66% {
-    bottom: 24.45%;
+    bottom: 31.45%;
   }
   to {
-    bottom: 25.45%;
+    bottom: 32.45%;
   }
 }
 @keyframes slow_right {
   from {
-    bottom: -1.7%;
+    bottom: 7.6%;
   }
   33% {
-    bottom: -2.7%;
+    bottom: 8.7%;
   }
   66% {
-    bottom: -0.7%;
+    bottom: 6.5%;
   }
   to {
-    bottom: -1.7%;
+    bottom: 7.6%;
   }
 }
 .block__header {
@@ -492,7 +507,7 @@ H6 {
   background-color: #000c23;
 }
 .b_benefit--item:hover {
-  background: url("/img/hover.png") #000c23 left bottom no-repeat;
+  background: url("/img/hover.png") #000c23 left 0 no-repeat;
 }
 .b_benefit--item:nth-child(1) .b_benefit--ball {
   top: 15px;
@@ -615,7 +630,7 @@ H6 {
   background-color: #001331;
 }
 .b_product--item:hover {
-  background: url("/img/hover.png") #001331 0 70px no-repeat;
+  background: url("/img/hover.png") #001331 0 71px no-repeat;
 }
 .b_product--item:hover .b_product--img {
   top: -5px;
@@ -994,6 +1009,7 @@ H6 {
   width: 270px;
   padding: 40px 0;
   text-align: center;
+  cursor: pointer;
 }
 .b_social--link.__vk {
   display: block;
@@ -1010,7 +1026,8 @@ H6 {
 .b_social--ico {
   display: inline-block;
   height: 70px;
-  margin: 10px auto;
+  width: 90px;
+  margin: 5px auto;
 }
 .b_social--name {
   display: block;
@@ -1021,36 +1038,45 @@ H6 {
 }
 .block__footer {
   display: block;
-}
-.block__footer .wrapper:after {
-  content: '';
-  clear: both;
-  display: block;
+  margin-top: 35px;
+  background-image: url("/img/background/main.png");
+  background-position: top center;
 }
 .b_footer--wrapper {
   display: block;
+  padding-top: 10px;
 }
 .b_footer--overlay {
   display: block;
 }
+.b_footer--overlay.__padding {
+  padding: 0 0 65px 0;
+  border-radius: 1020px/135px;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
 .b_footer--overlay.__shadow {
-  padding: 15px 0;
-  background: rgba(0, 0, 0, 0.35);
+  padding: 20px 0 30px 0;
+  background: rgba(0, 0, 0, 0.25);
 }
 .b_footer--overlay.__background {
   padding: 5px 0;
   background-color: #04162a;
 }
+.b_footer--overlay .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
 .b_footer--layout {
   display: inline-block;
 }
-.b_footer--layout.__left {
-  float: left;
-  display: inline-block;
-}
-.b_footer--layout.__right {
-  float: right;
-  display: inline-block;
+.b_footer--layout.__center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  text-align: center;
 }
 .b_footer--link {
   display: inline-block;
@@ -1061,11 +1087,21 @@ H6 {
 }
 .b_footer--link.__small {
   display: inline-block;
+  font-size: 12px;
+  margin-left: 50px;
+}
+.b_footer--text {
+  display: block;
+  color: #384b60;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .b_footer--logo {
   display: inline-block;
 }
 .b_footer--img {
   display: inline-block;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

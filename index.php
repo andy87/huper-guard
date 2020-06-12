@@ -461,20 +461,27 @@
 
                                     <div class="b_form--row">
                                         <h6 class="b_form--title" >Оперативная память</h6>
-                                        <select class="b_form--select">
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
-                                        </select>
+                                        <label class="b_form--select">
+                                            <select>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                                            </select>
+                                            <i></i>
+                                        </label>
+
                                     </div>
 
                                     <div class="b_form--row">
                                         <h6 class="b_form--title">Оперативная память</h6>
-                                        <select class="b_form--select">
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                            <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
-                                        </select>
+                                        <label class="b_form--select">
+                                            <select>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                                            </select>
+                                            <i></i>
+                                        </label>
                                     </div>
 
                                     <div class="b_form--row">
@@ -525,11 +532,15 @@
                                     <div class="b_form--row">
 
                                         <div class="b_form--layout" style="width: 30%">
-                                            <select class="b_form--select">
-                                                <option>2 МЕСЯЦА</option>
-                                                <option>3 МЕСЯЦА</option>
-                                                <option>4 МЕСЯЦА</option>
-                                            </select>
+                                            <label class="b_form--select">
+                                                <select>
+                                                    <option>2 МЕСЯЦА</option>
+                                                    <option>3 МЕСЯЦА</option>
+                                                    <option>4 МЕСЯЦА</option>
+                                                </select>
+                                                <i></i>
+                                            </label>
+
                                         </div>
 
                                         <div class="b_form--layout" style="width: 70%">

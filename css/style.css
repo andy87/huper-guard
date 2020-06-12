@@ -907,6 +907,12 @@ H6 {
   padding-left: 25px;
 }
 .b_form--select {
+  position: relative;
+  z-index: 5;
+  display: block;
+  width: 100%;
+}
+.b_form--select SELECT {
   display: block;
   width: 100%;
   padding: 15px 15px 13px 35px;
@@ -917,10 +923,37 @@ H6 {
   text-transform: uppercase;
   background: #0a223e;
   border-radius: 23px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
-.b_form--select:hover {
+.b_form--select I {
+  position: absolute;
+  z-index: 7;
+  top: 16px;
+  right: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: all 0.3s linear;
+}
+.b_form--select SELECT:focus + I {
+  top: 20px;
+  transform: rotate(225deg);
+}
+.b_form--select:hover SELECT,
+.b_form--select SELECT:focus {
   background: white;
   color: #1a57a6;
+}
+.b_form--select:hover SELECT + I,
+.b_form--select SELECT:focus + I {
+  border-color: #011b3a;
 }
 .b_form--label {
   display: block;

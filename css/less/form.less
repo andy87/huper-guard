@@ -149,20 +149,55 @@
 }
 
 .b_form--select {
+  position: relative;
+  z-index: 5;
   display: block;
   width: 100%;
-  padding: 15px 15px 13px 35px;
-  color: #fff;
-  line-height: 20px;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  background: #0a223e;
-  border-radius: 23px;
 
-  &:hover {
+  SELECT {
+    display: block;
+    width: 100%;
+    padding: 15px 15px 13px 35px;
+    color: #fff;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: #0a223e;
+    border-radius: 23px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  I {
+    position: absolute;
+    z-index: 7;
+    top: 16px;
+    right: 20px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: '';
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    transition: all .3s linear;
+  }
+
+  SELECT:focus + I {
+    top: 20px;
+    transform: rotate(225deg);
+  }
+
+  &:hover SELECT,
+  SELECT:focus {
     background: white;
     color: #1a57a6;
+    & + I {
+      border-color: #011b3a;
+    }
   }
 }
 

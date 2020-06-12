@@ -456,6 +456,8 @@
                                                        data-slider-min="1"
                                                        data-slider-max="100"
                                                        data-target="name_slider_1">
+                                                <!-- data-target="name_slider_1" - name ИНПУТА куда будет отправляться значение при slide ползунка -->
+
                                             </label>
                                         </div>
 
@@ -465,7 +467,9 @@
                                                    name="name_slider_1"
                                                    value="48"
                                                    id="form_slider"
-                                                   data-target="range_2">
+                                                   data-target="range_1">
+                                            <!-- data-target="range_1" - name РЕЙНДЖА куда будет отправляться значение при установке его вручную -->
+
                                         </label>
 
                                     </div>
@@ -539,6 +543,7 @@
                                                        data-slider-min="1"
                                                        data-slider-max="10000"
                                                        data-target="name_slider_2">
+                                                <!-- data-target="name_slider_2" - name ИНПУТА куда будет отправляться значение при slide ползунка -->
                                             </label>
                                         </div>
 
@@ -548,6 +553,8 @@
                                                    value="3 500"
                                                    name="name_slider_2"
                                                    data-target="range_2">
+                                            <!-- data-target="range_2" - name РЕЙНДЖА куда будет отправляться значение при установке его вручную -->
+
                                         </label>
 
                                     </div>

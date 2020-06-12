@@ -948,6 +948,7 @@ H6 {
 }
 .b_form--select:hover SELECT,
 .b_form--select SELECT:focus {
+  outline: none;
   background: white;
   color: #1a57a6;
 }

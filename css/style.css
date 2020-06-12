@@ -293,14 +293,14 @@ H6 {
 .block__header {
   display: block;
   height: 335px;
-  margin-bottom: 85px !important;
   background-image: url("/img/background/main.png");
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
 }
 .block__header.__main {
   position: relative;
   height: 835px;
+  margin-bottom: 85px !important;
   background-image: url("/img/background/header.png");
   background-position: center top;
 }
@@ -399,6 +399,9 @@ H6 {
 }
 .b_menu--item:last-child {
   padding-top: 0;
+}
+.b_menu--item.__active .b_menu--link:hover {
+  text-decoration: none;
 }
 .b_menu--item.__active:before {
   position: absolute;
@@ -617,9 +620,10 @@ H6 {
 .block__service {
   display: block;
   width: 100%;
-  margin-top: 115px !important;
+  margin-top: -250px;
 }
 .block__service.__background {
+  margin-top: 115px;
   background: url("/img/background/main.png") transparent center top no-repeat;
 }
 .b_service--title {
@@ -657,19 +661,57 @@ H6 {
   padding: 70px 0;
   text-align: center;
 }
+.block__filter {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.b_filter--button {
+  display: block;
+  width: 260px;
+  padding: 40px 25px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #0c2948;
+}
+.b_filter--button.__active {
+  background: #0b3f8d;
+  background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
+}
+.b_filter--button:hover:not(.__active) {
+  background: url("/img/hover.png") #0c2948 left bottom no-repeat;
+}
+.b_filter--ico {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.b_filter--title {
+  display: inline-block;
+  color: white;
+  line-height: 30px;
+  font-size: 22px;
+  font-weight: 800;
+}
 .block__product {
   display: block;
 }
 .b_product--list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 50px;
+}
+.b_product--list.__filter {
+  justify-content: space-around;
 }
 .b_product--item {
   position: relative;
   display: inline-block;
   width: 262px;
   padding-top: 25px;
+  margin-bottom: 50px;
   overflow: hidden;
   background-color: #021a34;
 }
@@ -717,9 +759,15 @@ H6 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+  text-decoration: none;
   background: #1854a3;
   box-shadow: inset 0 0 10px #2C7EC7;
   cursor: pointer;
+}
+.b_product--button:hover,
+.b_product--button:focus {
+  text-decoration: underline;
+  outline: none;
 }
 .block__property {
   display: block;
@@ -949,8 +997,23 @@ H6 {
   border: none;
   border-radius: 23px;
 }
+.b_form--input.__modal {
+  padding-left: 15px;
+  border-radius: 7px;
+  background: #081b31;
+}
 .b_form--textarea {
   display: block;
+  width: 100%;
+  padding: 13px 0 13px 15px;
+  color: white;
+  line-height: 23px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  background: #081b31;
+  border: none;
+  border-radius: 7px;
 }
 .b_form--layout {
   display: inline-block;
@@ -1208,5 +1271,66 @@ H6 {
 .b_footer--img {
   display: inline-block;
   margin-top: 20px;
+}
+.block__modal {
+  display: none;
+}
+.block__modal .b_form--title {
+  color: #9daabd;
+}
+.b_modal--overlay {
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+.b_modal--window {
+  display: none;
+  min-width: 520px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  background: #011127 url("/img/background/modal.png") right bottom no-repeat;
+}
+.b_modal--header {
+  position: relative;
+  display: block;
+  color: white;
+  line-height: 23px;
+  font-size: 21px;
+  font-weight: 800;
+}
+.b_modal--title {
+  display: block;
+}
+.b_modal--closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: transparent;
+  background-image: url("/img/icon/close.svg");
+  cursor: pointer;
+}
+.b_modal--body {
+  display: block;
+}
+.b_modal--button {
+  display: block;
+  margin: 30px auto;
+  padding: 13px 35px;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

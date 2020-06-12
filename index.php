@@ -406,7 +406,7 @@
 
                             <div class="b_calc--layout">
                                 <h3>Конфигуратор<br>сервера</h3>
-                                <a class="color button __border" href="/">
+                                <a class="color button __border js-modal" href="#modal_form">
                                     <span>Индивидуальная</span>
                                 </a>
                             </div>

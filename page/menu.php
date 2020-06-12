@@ -10,7 +10,7 @@
             <a class="b_menu--link" href="#test">О нас</a>
         </li>
 
-        <li class="b_menu--item">
+        <li class="b_menu--item __active">
             <a class="b_menu--link" href="#test">Услуги</a>
         </li>
 

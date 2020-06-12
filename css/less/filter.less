@@ -1,0 +1,36 @@
+.block__filter {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.b_filter--button {
+  display: block;
+  width: 260px;
+  padding: 40px 25px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #0c2948;
+
+  &.__active {
+    .blue_background();
+  }
+  &:hover:not(.__active){
+    background: url("/img/hover.png") #0c2948 left bottom no-repeat;
+  }
+}
+
+.b_filter--ico {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.b_filter--title {
+  display: inline-block;
+  color: white;
+  line-height: 30px;
+  font-size: 22px;
+  font-weight: 800;
+}

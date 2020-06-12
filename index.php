@@ -449,7 +449,7 @@
                                                 Заголовок ползунука:
                                             </h6>
                                             <div class="block__range ">
-                                                <input type="range" name="range_1">
+                                                <input type="range" name="range_1" data-min="1" data-max="100">
                                             </div>
                                         </div>
 
@@ -526,7 +526,7 @@
                                         </div>
 
                                         <label class="b_form--layout __padding" style="width: 33%">
-                                            <input class="b_form--input" type="text" name="slider">
+                                            <input class="b_form--input" type="text" name="slider" data-min="1" data-max="100">
                                         </label>
 
                                     </div>

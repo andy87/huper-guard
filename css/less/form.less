@@ -22,7 +22,7 @@
   margin-right: 45px;
   text-transform: uppercase;
   text-decoration: none;
-  background: #0a223e;
+  background: @background_form_element;
   border-radius: 23px;
 
   &:hover {
@@ -33,8 +33,7 @@
   &.__active,
   &.__active:hover {
     color: #fff;
-    background: rgb( 11, 63, 141 );
-    background: linear-gradient( 45deg, rgba( 11, 63, 141, 1 ) 0%, rgba( 37, 105, 185, 1 ) 100% );
+    .blue_background();
   }
   &:last-child {
     margin-right: 0;
@@ -107,7 +106,7 @@
       INPUT + SPAN {
         padding: 12px 25px 10px 25px;
         margin-right: 25px;
-        background: #0a223e;
+        background: @background_form_element;
         border-radius: 23px;
 
         &:before{ display: none }
@@ -121,8 +120,7 @@
       INPUT:checked + SPAN,
       &:hover > INPUT:checked + SPAN {
         color: #fff;
-        background: #0B3F8D;
-        background: linear-gradient( 45deg, rgba( 11, 63, 141, 1 ) 0%, rgba( 37, 105, 185, 1 ) 100% );
+        .blue_background();
       }
 
       INPUT:focus + SPAN {
@@ -142,7 +140,7 @@
   font-size: 14px;
   font-weight: 400;
   text-align: left;
-  background: #031427;
+  background: @background_input;
   border: none;
   border-radius: 23px;
 }
@@ -175,7 +173,7 @@
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
-    background: #0a223e;
+    background: @background_form_element;
     border-radius: 23px;
     -webkit-appearance: none;
     -moz-appearance: none;

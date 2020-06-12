@@ -548,10 +548,10 @@ H6 {
   width: 262px;
   padding: 25px 15px;
   overflow: hidden;
-  background-color: #000c23;
+  background-color: #041427;
 }
 .b_benefit--item:hover {
-  background: url("/img/hover.png") #000c23 left 0 no-repeat;
+  background: url("/img/hover.png") #041427 left 0 no-repeat;
 }
 .b_benefit--item:nth-child(1) .b_benefit--ball {
   top: 15px;
@@ -671,10 +671,10 @@ H6 {
   width: 262px;
   padding-top: 25px;
   overflow: hidden;
-  background-color: #001331;
+  background-color: #021a34;
 }
 .b_product--item:hover {
-  background: url("/img/hover.png") #001331 0 71px no-repeat;
+  background: url("/img/hover.png") #021a34 0 71px no-repeat;
 }
 .b_product--item:hover .b_product--img {
   top: -5px;
@@ -929,7 +929,7 @@ H6 {
 .b_form--radio.__inline .b_form--label INPUT:checked + SPAN,
 .b_form--radio.__inline .b_form--label:hover > INPUT:checked + SPAN {
   color: #fff;
-  background: #0B3F8D;
+  background: #0b3f8d;
   background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
 }
 .b_form--radio.__inline .b_form--label INPUT:focus + SPAN {
@@ -1026,9 +1026,11 @@ H6 {
 }
 .block__range {
   display: block;
+  position: relative;
+  top: -8px;
 }
-.block__range INPUT[type="range"] {
-  width: 100%;
+.block__range .slider {
+  width: 100% !important;
 }
 .block__partners {
   display: block;
@@ -1077,7 +1079,7 @@ H6 {
   width: 262px;
   height: 132px;
   padding: 31px 20px;
-  background: #00213c;
+  background: #11263e;
   cursor: pointer;
 }
 .b_partners--item:hover {

@@ -67,4 +67,20 @@ $(document).ready(function ()
             });
         });
     }
+
+    var $sliders = $('INPUT[type="range"]');
+
+    if ( $sliders.length )
+    {
+        $sliders.slider({
+            step: 1,
+        }).on('change', function (e, a, b)
+        {
+            console.log('e', e);
+            console.log('a', a);
+            console.log('b', b);
+        });
+
+    }
+
 });

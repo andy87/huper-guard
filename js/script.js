@@ -272,25 +272,25 @@ $(document).ready(function ()
                 {
                     if ( e.target !== e.currentTarget ) return;
 
-                    this.links.$windows.filter(":visible").hide();
+                    modules.modal.links.$windows.filter(":visible").hide();
 
-                    this.close_modal();
+                    modules.modal.actions.close_modal();
                 },
 
                 closer      : function(e)
                 {
                     $(this).parents( modules.modal.selectors.window ).hide();
 
-                    this.close_modal();
+                    modules.modal.actions.close_modal();
                 },
 
                 close_modal : function ()
                 {
                     const self = modules.modal;
 
-                    if ( ! self.links.windows.filter(":visible").length )
+                    if ( ! self.links.$windows.filter(":visible").length )
                     {
-                        self.links.block.hide();
+                        self.links.$block.hide();
                     }
                 }
             }
@@ -372,6 +372,53 @@ $(document).ready(function ()
             }
         },
 
+        input       : {
+
+            selector    : {
+                input       : '.b_form--input',
+                range       : 'INPUT.range',
+            },
+
+            init        : function ()
+            {
+                if ( $( this.selector.input ).length )
+                {
+                    this.bind();
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            bind        : function()
+            {
+                $( this.selector.range ).on('change', function (e)
+                {
+                    modules.input.actions.change( $(this) );
+
+                } );
+            },
+
+            actions     : {
+
+                change  : function ( $item )
+                {
+                    let value = $item.val().replace(/\s/g, '');
+
+                    //спасибо ciprex_
+                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+                    $item.val( result );
+
+                    if ( $item.data('target') )
+                    {
+                        modules.range.actions.setValue( $item.data('target'), value );
+                    }
+                }
+            }
+        },
+
         range       : {
 
             selector    : 'INPUT[type="range"]',
@@ -382,12 +429,7 @@ $(document).ready(function ()
             {
                 const $range    = $( this.selector );
 
-                function conditions($range)
-                {
-                    return ( $range.length /*&& typeof $['slider'] === "function"*/ )
-                }
-
-                if ( conditions( $range ) )
+                if ( $range.length )
                 {
                     let $item;
 
@@ -421,51 +463,6 @@ $(document).ready(function ()
                     modules.range.collection[ slider_name ].slider('setValue', value );
                 }
             },
-        },
-
-        input       : {
-
-            selector    : {
-                input       : '.b_form--input',
-                range       : '.b_form--input.range',
-            },
-
-            init        : function ()
-            {
-                if ( $( this.selector.input ).length )
-                {
-                    this.bind();
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            bind        : function()
-            {
-                $( this.selector.range ).change( this.actions.change );
-            },
-
-            actions     : {
-
-                change  : function ( e )
-                {
-                    const $item = $(this);
-
-                    let value = $item.val().replace(/\s/g, '');
-
-                    //спасибо ciprex_
-                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-                    $item.val( result );
-
-                    if ( $item.data('target') )
-                    {
-                        modules.range.actions.setValue( $item.data('target'), value );
-                    }
-                }
-            }
         },
     };
 

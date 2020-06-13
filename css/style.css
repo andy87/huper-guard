@@ -1474,6 +1474,15 @@ H6 {
   border-radius: 3px;
   cursor: pointer;
 }
+@media (max-width: 640px) {
+  .b_modal--window {
+    width: 100%;
+    background-size: cover;
+  }
+  .b_modal--window {
+    min-width: auto;
+  }
+}
 @media (max-width: 1140px) {
   HTML,
   BODY,

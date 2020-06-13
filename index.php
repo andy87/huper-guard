@@ -48,7 +48,7 @@
                                     <a class="color button __lg" href="/">
                                         Наши услуги
                                     </a>
-                                    <a class="color button __border __lg" href="/">
+                                    <a class="color button __border __lg js-modal" href="#modal_form">
                                         <span>Контакты</span>
                                     </a>
                                 </div>

@@ -371,7 +371,7 @@
 
                 </div>
 
-                <div class="block__calc" style="height: 952px">
+                <div class="block__calc" >
 
                     <div class="wrapper">
 
@@ -384,18 +384,18 @@
                             <div class="block__config">
 
                                 <button class="b_config--button">
-                                    <div class="b_config--header">DS #5</div>
-                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
+                                    <span class="b_config--header">DS #5</span>
+                                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
                                 </button>
 
                                 <button class="b_config--button">
-                                    <div class="b_config--header">DS #5</div>
-                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
+                                    <span class="b_config--header">DS #5</span>
+                                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
                                 </button>
 
                                 <button class="b_config--button">
-                                    <div class="b_config--header">DS #5</div>
-                                    <div class="b_config--description">Мощное решение для серьезных задач.</div>
+                                    <span class="b_config--header">DS #5</span>
+                                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
                                 </button>
 
                             </div>
@@ -406,14 +406,14 @@
 
                             <div class="b_calc--layout">
                                 <h3>Конфигуратор<br>сервера</h3>
-                                <a class="color button __border js-modal" href="#modal_form">
+                                <a class="color button __border js-modal" href="#calc">
                                     <span>Индивидуальная</span>
                                 </a>
                             </div>
 
                             <div class="b_calc--layout">
 
-                                <form class="block__form __calc" action="/" method="post">
+                                <form class="block__form __calc" id="calc" action="/" method="post">
 
                                     <div class="b_form--row">
 
@@ -559,7 +559,7 @@
 
                                     </div>
 
-                                    <div class="b_form--row">
+                                    <div class="b_form--row __sm-full">
 
                                         <div class="b_form--layout" style="width: 30%">
                                             <label class="b_form--select">

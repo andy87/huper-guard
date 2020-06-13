@@ -49,8 +49,10 @@
 
 .b_partners--item {
   display: inline-block;
-  width: 262px;
-  height: 132px;
+  width: 90%;
+  margin: 5%;
+  height: auto;
+  max-height: 132px;
   padding: 31px 20px;
   background: @background_light_dark;
   cursor: pointer;
@@ -65,6 +67,14 @@
 }
 
 .b_partners--logo {
-
   display: block;
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 1200px)
+{
+  .b_partners--toolbar {
+    right: 15px;
+  }
 }

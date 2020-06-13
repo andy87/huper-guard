@@ -19,9 +19,14 @@
         </li>
 
         <li class="b_menu--item">
-            <a class="color button __sm" href="#test">Личный кабинет</a>
         </li>
 
     </ul>
+
+    <a class="color button __sm" href="#test">Личный кабинет</a>
+
+    <button class="b_menu--hamburger" type="button">
+
+    </button>
 
 </div>

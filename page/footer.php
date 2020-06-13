@@ -33,7 +33,7 @@
 
         <div class="b_footer--overlay __shadow">
 
-            <div class="wrapper">
+            <div class="b_footer--row wrapper">
 
                 <div class="b_footer--layout">
                     <h5 style="margin-top: 20px">HyperGuard.com</h5>
@@ -53,7 +53,7 @@
 
         <div class="b_footer--overlay __background">
 
-            <div class="wrapper">
+            <div class="b_footer--row wrapper">
 
                 <div class="b_footer--layout">
                     <a class="b_footer--link" href="mailto:support@yousite.com">support@yousite.com</a>

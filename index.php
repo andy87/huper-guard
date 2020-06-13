@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Hyper Guard</title>
         <? include "page/head.php" ?>
     </head>
 
@@ -610,30 +610,6 @@
                         <div class="b_partners--list ">
 
                             <div class="owl-carousel" id="carousel_partners">
-
-                                <div class="b_partners--item">
-                                    <a class="b_partners--link" href="#">
-                                        <img class="b_partners--logo" src="/img/parners/all-host.png" alt="Партнёр">
-                                    </a>
-                                </div>
-
-                                <div class="b_partners--item">
-                                    <a class="b_partners--link" href="#">
-                                        <img class="b_partners--logo" src="/img/parners/dedos-guard.png" alt="Партнёр">
-                                    </a>
-                                </div>
-
-                                <div class="b_partners--item">
-                                    <a class="b_partners--link" href="#">
-                                        <img class="b_partners--logo" src="/img/parners/retnnet.png" alt="Партнёр">
-                                    </a>
-                                </div>
-
-                                <div class="b_partners--item">
-                                    <a class="b_partners--link" href="#">
-                                        <img class="b_partners--logo" src="/img/parners/mrgafon.png" alt="Партнёр">
-                                    </a>
-                                </div>
 
                                 <div class="b_partners--item">
                                     <a class="b_partners--link" href="#">

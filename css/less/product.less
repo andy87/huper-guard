@@ -18,11 +18,7 @@
   padding-top: 25px;
   margin-bottom: 50px;
   overflow: hidden;
-  background-color: @background_product;
-
-  &:hover {
-    background: url("/img/hover.png") @background_product 0 71px no-repeat;
-  }
+  .hover_background();
 
   &:hover {
     .b_product--img {
@@ -60,6 +56,8 @@
   }
 }
 .b_product--button {
+  position: relative;
+  z-index: 3;
   display: block;
   height: 44px;
   width: 100%;

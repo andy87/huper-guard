@@ -73,35 +73,35 @@
                         <ul class="b_benefit--wrapper">
 
                             <li class="b_benefit--item">
+                                <img class="b_benefit--img" src="/img/icon/safety.svg" alt="картинка на фоне">
                                 <img class="b_benefit--ball" src="/img/decor/sphere.png" alt="Сфера">
                                 <img class="b_benefit--icon" src="/img/icon/safety.svg" alt="Иконка">
                                 <h3 class="b_benefit--title">Высокая надежность</h3>
                                 <p class="b_benefit--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                <img class="b_benefit--img" src="/img/icon/safety.svg" alt="картинка на фоне">
                             </li>
 
                             <li class="b_benefit--item">
+                                <img class="b_benefit--img" src="/img/icon/support.svg" alt="картинка на фоне">
                                 <img class="b_benefit--ball" src="/img/decor/sphere.png" alt="Сфера">
                                 <img class="b_benefit--icon" src="/img/icon/support.svg" alt="Иконка">
                                 <h3 class="b_benefit--title">Лучшая поддержка</h3>
                                 <p class="b_benefit--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                <img class="b_benefit--img" src="/img/icon/support.svg" alt="картинка на фоне">
                             </li>
 
                             <li class="b_benefit--item">
+                                <img class="b_benefit--img" src="/img/icon/devices.svg" alt="картинка на фоне">
                                 <img class="b_benefit--ball" src="/img/decor/sphere.png" alt="Сфера">
                                 <img class="b_benefit--icon" src="/img/icon/devices.svg" alt="Иконка">
                                 <h3 class="b_benefit--title">Премиум оборудования</h3>
                                 <p class="b_benefit--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                <img class="b_benefit--img" src="/img/icon/devices.svg" alt="картинка на фоне">
                             </li>
 
                             <li class="b_benefit--item">
+                                <img class="b_benefit--img" src="/img/icon/traffic.svg" alt="картинка на фоне">
                                 <img class="b_benefit--ball" src="/img/decor/sphere.png" alt="Сфера">
                                 <img class="b_benefit--icon" src="/img/icon/traffic.svg" alt="Иконка">
                                 <h3 class="b_benefit--title">Без перегона трафика</h3>
                                 <p class="b_benefit--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                <img class="b_benefit--img" src="/img/icon/traffic.svg" alt="картинка на фоне">
                             </li>
 
                         </ul>
@@ -173,7 +173,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color" href="/">
+                                    <a class="b_product--button color" href="/services.php">
                                         Купить за 5000₽
                                     </a>
 
@@ -232,7 +232,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color" href="/">
+                                    <a class="b_product--button color" href="/services.php">
                                         Купить за 5000₽
                                     </a>
 
@@ -291,7 +291,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color" href="/">
+                                    <a class="b_product--button color" href="/services.php">
                                         Купить за 5000₽
                                     </a>
 
@@ -350,7 +350,7 @@
                                         </li>
                                     </ul>
 
-                                    <a class="b_product--button color" href="/">
+                                    <a class="b_product--button color" href="/services.php">
                                         Купить за 5000₽
                                     </a>
 
@@ -361,7 +361,7 @@
                         </div>
 
                         <div class="b_service--layout">
-                            <a class="color button __border" href="/">
+                            <a class="color button __border" href="/services.php">
                                 <span>Показать все</span>
                             </a>
                         </div>
@@ -574,7 +574,7 @@
                                         </div>
 
                                         <div class="b_form--layout" style="width: 70%">
-                                            <a class="b_form--button color" href="#">
+                                            <a class="b_form--button color" href="/services.php">
                                                 Заказать за <span id="total_price">500</span> RUB
                                             </a>
                                         </div>
@@ -612,49 +612,49 @@
                             <div class="owl-carousel" id="carousel_partners">
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/all-host.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/dedos-guard.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/retnnet.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/mrgafon.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/all-host.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/dedos-guard.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/retnnet.png" alt="Партнёр">
                                     </a>
                                 </div>
 
                                 <div class="b_partners--item">
-                                    <a class="b_partners--link">
+                                    <a class="b_partners--link" href="#">
                                         <img class="b_partners--logo" src="/img/parners/mrgafon.png" alt="Партнёр">
                                     </a>
                                 </div>

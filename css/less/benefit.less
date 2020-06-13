@@ -14,11 +14,7 @@
   width: 262px;
   padding: 25px 15px;
   overflow: hidden;
-  background-color: @background_benefit;
-
-  &:hover {
-    background: url("/img/hover.png") @background_benefit left 0 no-repeat;
-  }
+  .hover_background();
 
   &:nth-child(1) .b_benefit--ball {
     top: 15px;
@@ -69,6 +65,8 @@
 }
 
 .b_benefit--text {
+  position: relative;
+  z-index: 3;
   display: block;
   margin: 10px 0;
   max-height: 50px;
@@ -83,7 +81,7 @@
   display: block;
   height: 300px;
   width: 300px;
-  top: 35px;
+  top: 45px;
   right: -110px;
   opacity: .05;
 }

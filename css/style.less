@@ -14,6 +14,25 @@
   background: rgb( 11, 63, 141 );
   background: linear-gradient( 45deg, @blue 0%, rgb( 37, 105, 185 ) 100% );
 }
+.hover_background(){
+  position: relative;
+  background: #041427;
+
+  &:before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all .3s linear;
+    background: linear-gradient(45deg, #123b6f 0%,#041427 50%);
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+}
 
 @import "less/common";
 

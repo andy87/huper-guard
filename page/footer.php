@@ -12,15 +12,15 @@
                 <div class="b_footer--layout __right">
 
                     <div class="block__social">
-                        <a class="b_social--link __vk">
+                        <a class="b_social--link __vk" href="#">
                             <img class="b_social--ico" src="/img/icon/soc_vk.svg" alt="Иконка соцю сети">
                             <span class="b_social--name">Мы ВКонтакте</span>
                         </a>
-                        <a class="b_social--link __telegram">
+                        <a class="b_social--link __telegram" href="#">
                             <img class="b_social--ico" src="/img/icon/soc_telega.svg" alt="Иконка соцю сети">
                             <span class="b_social--name">Телеграм</span>
                         </a>
-                        <a class="b_social--link __discord">
+                        <a class="b_social--link __discord" href="#">
                             <img class="b_social--ico" src="/img/icon/soc_discord.svg" alt="Иконка соцю сети">
                             <span class="b_social--name">Discord</span>
                         </a>

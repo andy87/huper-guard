@@ -1,8 +1,6 @@
 
 let modules;
 
-
-
 $(document).ready(function ()
 {
     const STATUS_ERR    = 0;
@@ -10,7 +8,7 @@ $(document).ready(function ()
 
     modules = {
 
-        init : function ()
+        init        : function ()
         {
             function condition( modules, name )
             {
@@ -135,6 +133,258 @@ $(document).ready(function ()
 
         },
 
+        filter      : {
+
+            selectors   : {
+                block       : '.block__filter',
+                list        : '.b_product--list',
+                item        : '.b_product--item',
+                button      : '.b_filter--button',
+            },
+
+            init        : function ()
+            {
+                const $filter = $( this.selectors.block );
+
+                if ( $filter.length )
+                {
+                    this.bind( $filter );
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            bind        : function( $filter )
+            {
+                $filter.on('click', this.selectors.button, function (e)
+                {
+                    e.preventDefault();
+
+                    modules.filter.actions.filter( $(this).attr('href'), $(this) );
+                });
+            },
+
+            actions     : {
+
+                filter      : function ( category, $this )
+                {
+                    const   self            = modules.filter,
+                            cls             = {
+                                filter : '__filter',
+                                active : '__active',
+                            },
+                            $product_list   = $( self.selectors.list );
+
+                    let $collectionProduct = $( self.selectors.item );
+
+                    $collectionProduct.hide();
+
+                    if ( category !== '*' )
+                    {
+                        const filter = '[data-category="' + category+ '"]';
+
+                        $collectionProduct = $collectionProduct.filter( filter );
+                    }
+
+                    if ( $this === undefined )
+                    {
+                        $this = $( self.selectors.button + '[href="' + category + '"]' );
+                    }
+
+                    $product_list.removeClass(cls.filter);
+
+                    if ( $collectionProduct.length )
+                    {
+                        $collectionProduct.show();
+
+                        $( self.selectors.button + '.' + cls.active ).removeClass( cls.active );
+
+                        if ( $this !== undefined ) $this.addClass(cls.active );
+
+                        if ( $collectionProduct.length < 4 ) $product_list.addClass(cls.filter);
+                    }
+                }
+            }
+        },
+
+        config      : {
+
+            selectors   : {
+                block       : '.block__config',
+                button      : '.b_config--button'
+            },
+
+            init        : function ()
+            {
+                if ( $(this.selectors.block).length && $(this.selectors.button).length )
+                {
+                    this.bind();
+                }
+            },
+
+            bind        : function ()
+            {
+                $(this.selectors.block).on('click', this.selectors.button, function (e)
+                {
+                    e.preventDefault();
+                    const   $this   = $(this),
+                            form_id = $this.data('form_id');
+
+                    let params  = $this.data('params');
+
+                    if ( params !== undefined )
+                    {
+                        modules.config.actions.setup(form_id, params);
+                    }
+
+                    $this.addClass('__active');
+                })
+            },
+
+            actions     : {
+
+                setup       : function( form_id, params )
+                {
+                    const cls = '__active';
+
+                    $(modules.config.selectors.block).find('.'+cls).removeClass(cls);
+
+                    const $form = $('#' + form_id);
+
+                    if ( ! $form.length ) return;
+
+                    for( let name in params )
+                    {
+                        let $element = $form.find( '[name="' + name + '"]' );
+
+                        if ( $element.length )
+                        {
+                            let tagName = $element[0].tagName.toLowerCase();
+
+                            if ( tagName === 'select' )
+                            {
+                                $element[0].value = params[name] ;
+
+                            } else if ( tagName === 'input' ) {
+
+                                let type = $element.first().attr('type');
+
+                                switch ( type ) {
+                                    case 'checkbox':
+                                    case 'radio':
+                                        $('INPUT[value="' + params[name] + '"]').click();
+                                        break;
+
+                                    case 'range':
+                                        $element = $('[name="' + $element.data('target') + '"]');
+
+                                    default:
+                                        $element[0].value = params[name];
+                                        break;
+                                }
+                            }
+                            $element.first().change();
+                        }
+                    }
+                }
+            }
+        },
+
+        input       : {
+
+            selector    : {
+                input       : '.b_form--input',
+                range       : 'INPUT.range',
+            },
+
+            init        : function ()
+            {
+                if ( $( this.selector.input ).length )
+                {
+                    this.bind();
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            bind        : function()
+            {
+                $( this.selector.range ).on('change', function (e)
+                {
+                    modules.input.actions.change( $(this) );
+
+                } );
+            },
+
+            actions     : {
+
+                change  : function ( $item )
+                {
+                    let value = $item.val().replace(/\s/g, '');
+
+                    //спасибо ciprex_
+                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+                    $item.val( result );
+
+                    if ( $item.data('target') )
+                    {
+                        modules.range.actions.setValue( $item.data('target'), value );
+                    }
+                }
+            }
+        },
+
+        range       : {
+
+            selector    : 'INPUT[type="range"]',
+
+            collection  : {},
+
+            init        : function ()
+            {
+                const $range    = $( this.selector );
+
+                if ( $range.length )
+                {
+                    let $item;
+
+                    for( let i in $range )
+                    {
+                        $item = $( $range[ i ] );
+
+                        this.collection[ $item.attr('name') ] = $item.slider();
+
+                        this.collection[ $item.attr('name') ].on("slide", this.actions.slide );
+                    }
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            actions     : {
+
+                slide       : function (e)
+                {
+                    const $this     = $( this ),
+                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
+
+                    $( selector ).val( e.value ).change();
+                },
+
+                setValue    : function ( slider_name, value )
+                {
+                    modules.range.collection[ slider_name ].slider('setValue', value );
+                }
+            },
+        },
+
         partners    : {
 
             selectors   : {
@@ -256,7 +506,7 @@ $(document).ready(function ()
                 open            : function( id )
                 {
                     const   $block__modal   = modules.modal.links.$block,
-                            $modal          = $( id );
+                        $modal          = $( id );
 
                     if ( ! $modal.length ) return;
 
@@ -294,175 +544,6 @@ $(document).ready(function ()
                     }
                 }
             }
-        },
-
-        filter      : {
-
-            selectors   : {
-                block       : '.block__filter',
-                list        : '.b_product--list',
-                item        : '.b_product--item',
-                button      : '.b_filter--button',
-            },
-
-            init        : function ()
-            {
-                const $filter = $( this.selectors.block );
-
-                if ( $filter.length )
-                {
-                    this.bind( $filter );
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            bind        : function( $filter )
-            {
-                $filter.on('click', this.selectors.button, function (e)
-                {
-                    e.preventDefault();
-
-                    modules.filter.actions.filter( $(this).attr('href'), $(this) );
-                });
-            },
-
-            actions     : {
-
-                filter      : function ( category, $this )
-                {
-                    const   self            = modules.filter,
-                            cls             = {
-                                filter : '__filter',
-                                active : '__active',
-                            },
-                            $product_list   = $( self.selectors.list );
-
-                    let $collectionProduct = $( self.selectors.item );
-
-                    $collectionProduct.hide();
-
-                    if ( category !== '*' )
-                    {
-                        const filter = '[data-category="' + category+ '"]';
-
-                        $collectionProduct = $collectionProduct.filter( filter );
-                    }
-
-                    if ( $this === undefined )
-                    {
-                        $this = $( self.selectors.button + '[href="' + category + '"]' );
-                    }
-
-                    $product_list.removeClass(cls.filter);
-
-                    if ( $collectionProduct.length )
-                    {
-                        $collectionProduct.show();
-
-                        $( self.selectors.button + '.' + cls.active ).removeClass( cls.active );
-
-                        if ( $this !== undefined ) $this.addClass(cls.active );
-
-                        if ( $collectionProduct.length < 4 ) $product_list.addClass(cls.filter);
-                    }
-                }
-            }
-        },
-
-        input       : {
-
-            selector    : {
-                input       : '.b_form--input',
-                range       : 'INPUT.range',
-            },
-
-            init        : function ()
-            {
-                if ( $( this.selector.input ).length )
-                {
-                    this.bind();
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            bind        : function()
-            {
-                $( this.selector.range ).on('change', function (e)
-                {
-                    modules.input.actions.change( $(this) );
-
-                } );
-            },
-
-            actions     : {
-
-                change  : function ( $item )
-                {
-                    let value = $item.val().replace(/\s/g, '');
-
-                    //спасибо ciprex_
-                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-                    $item.val( result );
-
-                    if ( $item.data('target') )
-                    {
-                        modules.range.actions.setValue( $item.data('target'), value );
-                    }
-                }
-            }
-        },
-
-        range       : {
-
-            selector    : 'INPUT[type="range"]',
-
-            collection  : {},
-
-            init        : function ()
-            {
-                const $range    = $( this.selector );
-
-                if ( $range.length )
-                {
-                    let $item;
-
-                    for( let i in $range )
-                    {
-                        $item = $( $range[ i ] );
-
-                        this.collection[ $item.attr('name') ] = $item.slider();
-
-                        this.collection[ $item.attr('name') ].on("slide", this.actions.slide );
-                    }
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            actions     : {
-
-                slide       : function (e)
-                {
-                    const $this       = $( this ),
-                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
-
-                    $( selector ).val( e.value ).change();
-                },
-
-                setValue    : function ( slider_name, value )
-                {
-                    modules.range.collection[ slider_name ].slider('setValue', value );
-                }
-            },
         },
     };
 

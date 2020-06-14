@@ -8,24 +8,7 @@
 
             <h6 class="b_calc--title" >Шаблоны конфигураций:</h6>
 
-            <div class="block__config">
-
-                <button class="b_config--button">
-                    <span class="b_config--header">DS #5</span>
-                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
-                </button>
-
-                <button class="b_config--button">
-                    <span class="b_config--header">DS #5</span>
-                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
-                </button>
-
-                <button class="b_config--button">
-                    <span class="b_config--header">DS #5</span>
-                    <span class="b_config--description">Мощное решение для серьезных задач.</span>
-                </button>
-
-            </div>
+            <? include "config.php" ?>
 
         </div>
 
@@ -40,7 +23,7 @@
 
             <div class="b_calc--layout">
 
-                <form class="block__form __calc" id="calc" action="/" method="post">
+                <form class="block__form __calc" id="server_form" action="/" method="post">
 
                     <div class="b_form--row">
 
@@ -56,12 +39,12 @@
                         <div class="b_form--radio __inline">
 
                             <label class="b_form--label">
-                                <input type="radio" name="name_server" checked>
+                                <input type="radio" name="name_server" value="1" checked>
                                 <span> NAMESERVER (MSK) </span>
                             </label>
 
                             <label class="b_form--label">
-                                <input type="radio" name="name_server">
+                                <input type="radio" name="name_server" value="2">
                                 <span> NAMESERVER (MSK) </span>
                             </label>
 
@@ -104,10 +87,10 @@
                     <div class="b_form--row">
                         <h6 class="b_form--title" >Оперативная память</h6>
                         <label class="b_form--select">
-                            <select>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                            <select name="select_1">
+                                <option value="1">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                <option value="2">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                <option value="3">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
                             </select>
                             <i></i>
                         </label>
@@ -117,10 +100,10 @@
                     <div class="b_form--row">
                         <h6 class="b_form--title">Оперативная память</h6>
                         <label class="b_form--select">
-                            <select>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                <option>ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                            <select name="select_2">
+                                <option value="1">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                <option value="2">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                <option value="3">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
                             </select>
                             <i></i>
                         </label>
@@ -132,22 +115,22 @@
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center" >
+                                    <input type="radio" name="data_center" value="1">
                                     <span>текст чекбокса сайта</span>
                                 </label>
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center" checked>
+                                    <input type="radio" name="data_center" value="2" checked>
                                     <span>текст чекбокса сайта</span>
                                 </label>
                             </div>
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2" checked>
+                                    <input type="radio" name="data_center_2" value="1" checked>
                                     <span>Включить что то?</span>
                                 </label>
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2">
+                                    <input type="radio" name="data_center_2" value="2">
                                     <span>Включить что то?</span>
                                 </label>
                             </div>
@@ -190,10 +173,10 @@
 
                         <div class="b_form--layout" style="width: 30%">
                             <label class="b_form--select">
-                                <select>
-                                    <option>2 МЕСЯЦА</option>
-                                    <option>3 МЕСЯЦА</option>
-                                    <option>4 МЕСЯЦА</option>
+                                <select name="month">
+                                    <option value="2">2 МЕСЯЦА</option>
+                                    <option value="3">3 МЕСЯЦА</option>
+                                    <option value="4">4 МЕСЯЦА</option>
                                 </select>
                                 <i></i>
                             </label>

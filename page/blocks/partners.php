@@ -6,11 +6,15 @@
 
         <div class="b_partners--toolbar">
 
-            <a class="b_partners--button __left" href="#"></a>
+            <a class="b_partners--button __left" href="#">
+                <i></i>
+            </a>
 
             <span class="b_partners--space"></span>
 
-            <a class="b_partners--button __right" href="#"></a>
+            <a class="b_partners--button __right" href="#">
+                <i></i>
+            </a>
 
         </div>
 

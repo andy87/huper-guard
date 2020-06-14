@@ -227,8 +227,8 @@ H6 {
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: none;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 .button.__sm {
   padding: 10px 25px;
@@ -239,12 +239,17 @@ H6 {
 }
 .button.__border {
   padding: 4px;
+  box-shadow: none;
 }
 .button.__border > SPAN {
   display: inline-block;
   width: 100%;
   background: #011b3a;
   padding: 10px 20px;
+  transition: all 0.3s linear;
+}
+.button.__border > SPAN:hover {
+  box-shadow: inset 0 -40px 70px -40px rgba(37, 105, 185, 0.6);
 }
 .button.__border.__sm > SPAN {
   padding: 2px 21px;
@@ -252,6 +257,9 @@ H6 {
 .button.__border.__lg > SPAN {
   padding: 14px 46px;
   font-size: 15px;
+}
+.button:hover {
+  box-shadow: inset 0 -40px 70px -40px rgba(255, 255, 255, 0.6);
 }
 .decor--arrow {
   position: absolute;
@@ -408,7 +416,7 @@ H6 {
   padding-top: 0;
 }
 .b_menu--item.__active .b_menu--link:hover {
-  text-decoration: none;
+  color: black;
 }
 .b_menu--item.__active:before {
   position: absolute;
@@ -428,11 +436,10 @@ H6 {
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none;
   cursor: pointer;
 }
 .b_menu--link:hover {
-  text-decoration: underline;
+  color: black;
 }
 .b_menu--hamburger {
   display: none;
@@ -770,27 +777,44 @@ H6 {
   padding-top: 50px;
 }
 .b_filter--button {
+  position: relative;
   display: block;
   width: 260px;
   padding: 40px 25px;
-  text-decoration: none;
   cursor: pointer;
   background: #0c2948;
+}
+.b_filter--button:before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: linear-gradient(25deg, #164487 0%, #0c2948 50%);
+  transition: all 0.3s linear;
 }
 .b_filter--button.__active {
   background: #0b3f8d;
   background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
 }
-.b_filter--button:hover:not(.__active) {
-  background: url("/img/hover.png") #0c2948 left bottom no-repeat;
+.b_filter--button:hover:not(.__active):before {
+  opacity: 1;
 }
 .b_filter--ico {
+  position: relative;
+  z-index: 2;
   display: inline-block;
   width: 60px;
   height: 60px;
   margin-right: 10px;
 }
 .b_filter--title {
+  position: relative;
+  z-index: 2;
   display: inline-block;
   color: white;
   line-height: 30px;
@@ -875,14 +899,14 @@ H6 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  text-decoration: none;
   background: #1854a3;
   box-shadow: inset 0 0 10px #2C7EC7;
+  transition: all 0.3s linear;
   cursor: pointer;
 }
 .b_product--button:hover,
 .b_product--button:focus {
-  text-decoration: underline;
+  background: #2C7EC7;
   outline: none;
 }
 .block__property {
@@ -954,23 +978,39 @@ H6 {
   padding-top: 15px;
 }
 .b_config--button {
+  position: relative;
   display: block;
   width: 147px;
   height: 130px;
-  background: #11263e;
   border: 1px solid #091e35;
   cursor: pointer;
+  background: #11263e;
 }
-.b_config--button:hover,
-.b_config--button.__active {
+.b_config--button:before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
   background: #0b3f8d;
   background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.b_config--button:hover:before,
+.b_config--button.__active:before {
+  opacity: 1;
 }
 .b_config--button:hover .b_config--header,
 .b_config--button.__active .b_config--header {
   color: white;
 }
 .b_config--header {
+  position: relative;
+  z-index: 5;
   display: block;
   padding: 8px;
   color: #1d5cac;
@@ -980,8 +1020,11 @@ H6 {
   text-align: center;
   border-bottom: none;
   border-radius: 0;
+  transition: all 0.3s linear;
 }
 .b_config--description {
+  position: relative;
+  z-index: 5;
   display: block;
   color: white;
   font-size: 14px;
@@ -1007,12 +1050,12 @@ H6 {
   font-weight: 400;
   margin-right: 45px;
   text-transform: uppercase;
-  text-decoration: none;
   background: #0a223e;
   border-radius: 23px;
+  transition: all 0.3s linear;
 }
 .b_form--tab:hover {
-  background: white;
+  background: #fff;
   color: #1a57a6;
 }
 .b_form--tab.__active,
@@ -1054,7 +1097,6 @@ H6 {
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none;
 }
 .b_form--radio .b_form--label INPUT + SPAN:before {
   position: absolute;
@@ -1070,7 +1112,7 @@ H6 {
   background-position: top center;
 }
 .b_form--radio .b_form--label INPUT:focus + SPAN {
-  text-decoration: underline;
+  color: black;
 }
 .b_form--radio.__inline {
   display: block;
@@ -1085,12 +1127,13 @@ H6 {
   margin-right: 25px;
   background: #0a223e;
   border-radius: 23px;
+  transition: all 0.3s linear;
 }
 .b_form--radio.__inline .b_form--label INPUT + SPAN:before {
   display: none;
 }
 .b_form--radio.__inline .b_form--label:hover > INPUT + SPAN {
-  background: white;
+  background: #FFF;
   color: #1a57a6;
 }
 .b_form--radio.__inline .b_form--label INPUT:checked + SPAN,
@@ -1146,6 +1189,7 @@ H6 {
   z-index: 5;
   display: block;
   width: 100%;
+  transition: all 0.3s linear;
 }
 .b_form--select SELECT {
   display: block;
@@ -1162,6 +1206,7 @@ H6 {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 .b_form--select I {
   position: absolute;
@@ -1203,8 +1248,12 @@ H6 {
   line-height: 20px;
   font-size: 14px;
   text-align: center;
-  text-decoration: none;
   border-radius: 23px;
+  transition: all 0.3s linear;
+  box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.25);
+}
+.b_form--button:hover {
+  box-shadow: inset 0 -40px 70px -40px rgba(255, 255, 255, 0.25);
 }
 .block__range {
   display: block;
@@ -1247,17 +1296,31 @@ H6 {
   background-size: auto;
   background-repeat: no-repeat;
 }
+.b_partners--button I {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/sprites/slider_buttons.png");
+  opacity: 0;
+  transition: all 0.3s linear;
+}
 .b_partners--button.__left {
   background-position: bottom left;
 }
-.b_partners--button.__left:hover {
+.b_partners--button.__left I {
   background-position: top left;
+}
+.b_partners--button.__left:hover I {
+  opacity: 1;
 }
 .b_partners--button.__right {
   background-position: bottom right;
 }
-.b_partners--button.__right:hover {
+.b_partners--button.__right I {
   background-position: top right;
+}
+.b_partners--button.__right:hover I {
+  opacity: 1;
 }
 .b_partners--space {
   display: inline-block;
@@ -1269,6 +1332,7 @@ H6 {
   padding: 35px 0;
 }
 .b_partners--item {
+  position: relative;
   display: inline-block;
   width: 90%;
   margin: 5%;
@@ -1278,14 +1342,34 @@ H6 {
   background: #11263e;
   cursor: pointer;
 }
-.b_partners--item:hover {
+.b_partners--item:before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
   background: #0b3f8d;
   background: linear-gradient(45deg, #0b3f8d 0%, #2569b9 100%);
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.b_partners--item:hover:before,
+.b_partners--item.__active:before {
+  opacity: 1;
+}
+.b_partners--item:hover .b_config--header,
+.b_partners--item.__active .b_config--header {
+  color: white;
 }
 .b_partners--link {
   display: block;
 }
 .b_partners--logo {
+  position: relative;
+  z-index: 5;
   display: block;
   height: 100%;
   width: auto;
@@ -1305,8 +1389,9 @@ H6 {
   width: 270px;
   padding: 40px 0;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
+  box-shadow: inset 0 0 0 0 #fff;
+  transition: all 0.3s linear;
 }
 .b_social--link.__vk {
   display: block;
@@ -1319,6 +1404,9 @@ H6 {
 .b_social--link.__discord {
   display: block;
   background-color: #667bc0;
+}
+.b_social--link:hover {
+  box-shadow: inset 0 0 40px #fff;
 }
 .b_social--ico {
   display: inline-block;
@@ -1360,6 +1448,9 @@ H6 {
   padding: 5px 0;
   background-color: #04162a;
 }
+.b_footer--overlay.__background .b_footer--link:hover {
+  color: #1d5cac;
+}
 .b_footer--overlay .wrapper {
   display: flex;
   justify-content: space-between;
@@ -1380,7 +1471,7 @@ H6 {
   color: white;
   line-height: 20px;
   font-size: 14px;
-  text-decoration: none;
+  transition: all 0.3s linear;
 }
 .b_footer--link.__small {
   display: inline-block;

@@ -362,7 +362,7 @@ $(document).ready(function ()
                     {
                         $collectionProduct.show();
 
-                        $( self.selectors.button + cls.active ).removeClass(cls.active );
+                        $( self.selectors.button + '.' + cls.active ).removeClass( cls.active );
 
                         if ( $this !== undefined ) $this.addClass(cls.active );
 

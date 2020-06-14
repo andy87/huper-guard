@@ -1,4 +1,4 @@
-<div class="block__partners">
+<div class="block__partners" id="partners">
 
     <div class="b_partners--wrapper wrapper">
 
@@ -18,7 +18,7 @@
 
         </div>
 
-        <div class="b_partners--list ">
+        <div class="b_partners--list">
 
             <div class="owl-carousel" id="carousel_partners">
 

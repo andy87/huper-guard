@@ -1,4 +1,4 @@
-<div class="block__calc" >
+<div class="block__calc" id="calc">
 
     <div class="wrapper">
 
@@ -39,12 +39,12 @@
                         <div class="b_form--radio __inline">
 
                             <label class="b_form--label">
-                                <input type="radio" name="name_server" value="1" checked>
+                                <input type="radio" name="name_server" value="1" data-price="101" checked>
                                 <span> NAMESERVER (MSK) </span>
                             </label>
 
                             <label class="b_form--label">
-                                <input type="radio" name="name_server" value="2">
+                                <input type="radio" name="name_server" value="2" data-price="102">
                                 <span> NAMESERVER (MSK) </span>
                             </label>
 
@@ -61,6 +61,7 @@
                             <label class="block__range ">
                                 <input type="range"
                                        name="range_1"
+                                       data-price="7"
                                        data-slider-step="1"
                                        data-slider-value="48"
                                        data-slider-min="1"
@@ -88,9 +89,9 @@
                         <h6 class="b_form--title" >Оперативная память</h6>
                         <label class="b_form--select">
                             <select name="select_1">
-                                <option value="1">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                <option value="2">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                <option value="3">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                                <option value="1" data-price="21">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                <option value="2" data-price="22">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                <option value="3" data-price="23">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
                             </select>
                             <i></i>
                         </label>
@@ -101,9 +102,9 @@
                         <h6 class="b_form--title">Оперативная память</h6>
                         <label class="b_form--select">
                             <select name="select_2">
-                                <option value="1">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
-                                <option value="2">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
-                                <option value="3">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
+                                <option value="1" data-price="31">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
+                                <option value="2" data-price="32">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
+                                <option value="3" data-price="33">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
                             </select>
                             <i></i>
                         </label>
@@ -115,22 +116,22 @@
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center" value="1">
+                                    <input type="radio" name="data_center" data-price="40" value="1">
                                     <span>текст чекбокса сайта</span>
                                 </label>
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center" value="2" checked>
+                                    <input type="radio" name="data_center" data-price="44" value="2" checked>
                                     <span>текст чекбокса сайта</span>
                                 </label>
                             </div>
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2" value="1" checked>
+                                    <input type="radio" name="data_center_2" data-price="50" value="1" checked>
                                     <span>Включить что то?</span>
                                 </label>
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2" value="2">
+                                    <input type="radio" name="data_center_2" data-price="55"  value="2">
                                     <span>Включить что то?</span>
                                 </label>
                             </div>
@@ -148,6 +149,7 @@
                             <label class="block__range">
                                 <input type="range"
                                        name="range_2"
+                                       data-price="3"
                                        data-slider-step="100"
                                        data-slider-value="3500"
                                        data-slider-min="1"

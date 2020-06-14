@@ -3,19 +3,19 @@
     <ul class="b_menu--wrapper">
 
         <li class="b_menu--item">
-            <a class="b_menu--link" href="#test">Главная</a>
+            <a class="b_menu--link" href="/">Главная</a>
         </li>
 
         <li class="b_menu--item">
-            <a class="b_menu--link" href="#test">О нас</a>
+            <a class="b_menu--link" href="#benefit">О нас</a>
         </li>
 
         <li class="b_menu--item __active">
-            <a class="b_menu--link" href="#test">Услуги</a>
+            <a class="b_menu--link" href="#calc">Услуги</a>
         </li>
 
         <li class="b_menu--item">
-            <a class="b_menu--link" href="#test">Контакты</a>
+            <a class="b_menu--link" href="#footer">Контакты</a>
         </li>
 
         <li class="b_menu--item">
@@ -23,7 +23,7 @@
 
     </ul>
 
-    <a class="color button __sm" href="#test">Личный кабинет</a>
+    <a class="color button __sm" href="/">Личный кабинет</a>
 
     <button class="b_menu--hamburger" type="button">
 

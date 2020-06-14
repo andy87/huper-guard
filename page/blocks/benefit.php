@@ -32,7 +32,7 @@ $collectionPartner[] = (object) [
 ];
 
 ?>
-<div class="block__benefit">
+<div class="block__benefit" id="benefit">
 
     <div class="wrapper">
 

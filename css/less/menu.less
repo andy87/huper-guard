@@ -14,21 +14,25 @@
     padding-top: 0;
   }
 
-  &.__active{
+  &:before {
+    position: absolute;
+    bottom: 5px;
+    left: 40px;
+    right: 40px;
+    content: '';
+    height: 0;
+    background: #004bb5;
+    background: linear-gradient(to bottom, #2569B9 0%, #004bb5 100%);
+    transition: all .3s linear;
+  }
+  &:hover{
 
-    .b_menu--link:hover {
-      color: black;
+    .b_menu--link {
+      color: #FFF;
     }
 
     &:before {
-      position: absolute;
-      bottom: 5px;
-      left: 40px;
-      right: 40px;
-      content: '';
       height: 6px;
-      background: #004bb5;
-      background: linear-gradient(to bottom, #2569B9 0%, #004bb5 100%);
     }
   }
 }
@@ -41,8 +45,10 @@
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all .3s linear;
+
   &:hover{
-    color: black;
+    color: #1d5cac;
   }
 }
 

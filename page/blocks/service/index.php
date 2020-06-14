@@ -10,7 +10,7 @@ $collectionService[] = (object) [ 'img' => 2 ];
 $collectionService[] = (object) [ 'img' => 3 ];
 $collectionService[] = (object) [ 'img' => 4 ];
 ?>
-<div class="block__service __background">
+<div class="block__service __background" id="service">
 
     <div class="wrapper">
 

@@ -29,7 +29,9 @@ $(document).ready(function ()
 
         menu        : {
             selectors   : {
+                block       : '.block__menu',
                 hamburger   : '.b_menu--hamburger',
+                link        : '.b_menu--link',
                 wrapper     : '.b_menu--wrapper'
             },
 
@@ -45,6 +47,19 @@ $(document).ready(function ()
             bind        : function()
             {
                 $(this.selectors.hamburger).on('click', this.actions.toggle );
+
+                $(this.selectors.link).on('click', function (e)
+                {
+                    e.preventDefault();
+
+                    const $this = $(this),
+                        href    = $this.attr('href'),
+                        $target = $( href );
+
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $target.offset().top
+                    }, 600);
+                } )
             },
 
             actions     : {
@@ -53,15 +68,16 @@ $(document).ready(function ()
                 {
                     $(modules.menu.selectors.wrapper).toggleClass( modules.menu.cls.open );
                 },
+
                 open : function ()
                 {
                     $(modules.menu.selectors.wrapper).addClass( modules.menu.cls.open );
 
                 },
+
                 close : function ()
                 {
                     $(modules.menu.selectors.wrapper).removeClass( modules.menu.cls.open );
-
                 }
             }
         },
@@ -292,6 +308,60 @@ $(document).ready(function ()
             }
         },
 
+        form        : {
+
+            selectors   : {
+                block       : '.block__form.__calc',
+            },
+
+            total       : '#total_price',
+
+            init        : function ()
+            {
+                this.bind();
+            },
+
+            bind        : function ()
+            {
+                $(this.selectors.block).on('change', 'INPUT, SELECT', this.actions.calc );
+            },
+
+            actions     : {
+
+                calc        : function (e)
+                {
+                    const $form = $(modules.form.selectors.block),
+                        $items  = $form.find('[data-price]:checked, OPTION[data-price]:selected, [type=range][data-price]'),
+                        month   = parseInt( $form.find('[name="month"]')[0].value );
+
+                    let totalPrice  = 0;
+
+                    $items.each(function ( index, $item )
+                    {
+                        let $element = $($item);
+
+                        let price = parseInt( $element.data('price') );
+
+                        if ( $item.tagName === 'INPUT' && $item.type === 'range' )
+                        {
+                            $element = $element.data('target');
+
+                            $element = $('[name="' + $element + '"]');
+
+                            price = parseInt( $element.val().replace(/\s+/g, '') ) * price;
+                        }
+
+                        totalPrice += price;
+                    });
+
+                    totalPrice = totalPrice * month;
+
+                    $(modules.form.total).text( totalPrice );
+                }
+            }
+
+        },
+
         input       : {
 
             selector    : {
@@ -353,14 +423,23 @@ $(document).ready(function ()
                 {
                     let $item;
 
-                    for( let i in $range )
+                    setTimeout(function ()
                     {
-                        $item = $( $range[ i ] );
+                        for( let i in $range )
+                        {
+                            $item = $($range[ i ]);
 
-                        this.collection[ $item.attr('name') ] = $item.slider();
+                            let name        = $item.attr('name');
 
-                        this.collection[ $item.attr('name') ].on("slide", this.actions.slide );
-                    }
+                            $item.getAttribute = {};
+
+                            let slider = $item.slider();
+
+                            slider.on("slide", modules.range.actions.slide );
+
+                            modules.range.collection[ name ] = slider;
+                        }
+                    }, 1000);
 
                     return STATUS_OK
                 }

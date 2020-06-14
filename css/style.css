@@ -415,18 +415,22 @@ H6 {
 .b_menu--item:last-child {
   padding-top: 0;
 }
-.b_menu--item.__active .b_menu--link:hover {
-  color: black;
-}
-.b_menu--item.__active:before {
+.b_menu--item:before {
   position: absolute;
   bottom: 5px;
   left: 40px;
   right: 40px;
   content: '';
-  height: 6px;
+  height: 0;
   background: #004bb5;
   background: linear-gradient(to bottom, #2569B9 0%, #004bb5 100%);
+  transition: all 0.3s linear;
+}
+.b_menu--item:hover .b_menu--link {
+  color: #FFF;
+}
+.b_menu--item:hover:before {
+  height: 6px;
 }
 .b_menu--link {
   display: block;
@@ -437,9 +441,10 @@ H6 {
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 .b_menu--link:hover {
-  color: black;
+  color: #1d5cac;
 }
 .b_menu--hamburger {
   display: none;
@@ -1112,7 +1117,7 @@ H6 {
   background-position: top center;
 }
 .b_form--radio .b_form--label INPUT:focus + SPAN {
-  color: black;
+  color: #1a57a6;
 }
 .b_form--radio.__inline {
   display: block;

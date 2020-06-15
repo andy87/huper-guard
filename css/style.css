@@ -125,6 +125,11 @@
   font-display: swap;
   src: local('Montserrat Black'), local('Montserrat-Black'), url(http://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG7g4.ttf) format('truetype');
 }
+.tooltipster-sidetip .tooltipster-box .tooltipster-content {
+  padding: 5px 25px;
+  font-size: 13px;
+  line-height: 16px;
+}
 HTML,
 BODY {
   margin: 0;

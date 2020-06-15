@@ -8,8 +8,10 @@ $(document).ready(function ()
 
     modules = {
 
-        init        : function ()
+        init        : function ( callback )
         {
+            callback = callback ?? function ( self ) {};
+
             function condition( modules, name )
             {
                 return ( typeof modules[ name ] === "object" && typeof modules[ name ]['init'] === "function" )
@@ -22,9 +24,13 @@ $(document).ready(function ()
                     if ( modules[name]['init']() === STATUS_ERR )
                     {
                         console.log( 'Module not found', name );
+                        continue;
                     }
+                    console.log( `Module ${name} Enabled`,  );
                 }
             }
+
+            callback( this );
         },
 
         window      : {
@@ -333,9 +339,7 @@ $(document).ready(function ()
 
                         $this.addClass('__active');
                     }
-
-
-                })
+                });
             },
 
             actions     : {
@@ -488,9 +492,11 @@ $(document).ready(function ()
 
                     function lib_prices( $element, lib )
                     {
-                        $.each( lib, function (value, price)
+                        $.each( lib, function ( value, price )
                         {
-                            $element.find(`[value="{$value}"]`).attr('data-price', price).data('price', price );
+                            $element.filter(`[value="${value}"]`)
+                                .attr( 'data-price', price )
+                                .data( 'price', price );
                         });
                     }
 
@@ -505,7 +511,7 @@ $(document).ready(function ()
 
                             if ( tag === 'SELECT' )
                             {
-                                lib_prices( $element, priceLib );
+                                lib_prices( $element.find('OPTION'), priceLib );
 
                             } else if ( tag === 'INPUT' ) {
 
@@ -533,8 +539,6 @@ $(document).ready(function ()
 
                 calc        : function (e)
                 {
-                    e = e ?? window.event;
-
                     const $form = $(modules.form.selectors.block),
                         $items  = $form.find('[data-price]:checked, OPTION[data-price]:selected, [type=range][data-price]'),
                         month   = parseInt( $form.find('[name="month"]')[0].value );
@@ -782,6 +786,18 @@ $(document).ready(function ()
             }
         },
 
+        tooltips    : {
+
+            init        : function ()
+            {
+                $('.tooltip').tooltipster({
+                    animation   : 'fade',
+                    delay       : 200,
+                    theme       : 'tooltipster-borderless'
+                });
+            }
+        },
+
         range       : {
 
             selector    : 'INPUT[type="range"]',
@@ -834,5 +850,4 @@ $(document).ready(function ()
     };
 
     modules.init();
-
 });

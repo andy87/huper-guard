@@ -27,11 +27,11 @@
 
                     <div class="b_form--row">
 
-                        <a class="b_form--tab" href="#" data-id='1'>
+                        <a class="b_form--tab __active tooltip " href="#" data-id='1' title="This is my image's tooltip message!">
                             Виртуальный сервер
                         </a>
 
-                        <a class="b_form--tab __active" href="#" data-id='2'>
+                        <a class="b_form--tab tooltip " href="#" data-id='2' title="This is my image's tooltip message!">
                             Виртуальный сервер
                         </a>
 
@@ -45,12 +45,12 @@
 
                             <label class="b_form--label">
                                 <input type="radio" name="name_server" value="1" data-price="101" checked>
-                                <span> NAMESERVER (MSK) </span>
+                                <span class="tooltip" title="This is my image's tooltip message!"> NAMESERVER (MSK) </span>
                             </label>
 
                             <label class="b_form--label">
                                 <input type="radio" name="name_server" value="2" data-price="102">
-                                <span> NAMESERVER (MSK) </span>
+                                <span class="tooltip" title="This is my image's tooltip message!"> NAMESERVER (MSK) </span>
                             </label>
 
                         </div>
@@ -63,7 +63,7 @@
                             <h6 class="b_form--title">
                                 Заголовок ползунука:
                             </h6>
-                            <label class="block__range ">
+                            <label class="block__range tooltip" title="This is my image's tooltip message!">
                                 <input type="range"
                                        name="range_1"
                                        data-price="7"
@@ -106,7 +106,7 @@
                     <div class="b_form--row">
                         <h6 class="b_form--title">Оперативная память</h6>
                         <label class="b_form--select">
-                            <select name="select_2">
+                            <select name="select_2" class="tooltip" title="This is my image's tooltip message!">
                                 <option value="1" data-price="31">ВИРТУАЛЬНЫЙ СЕРВЕР</option>
                                 <option value="2" data-price="32">ВИРТУАЛЬНЫЙ СЕРВЕР 2</option>
                                 <option value="3" data-price="33">ВИРТУАЛЬНЫЙ СЕРВЕР 3</option>
@@ -122,22 +122,22 @@
                             <div class="b_form--layout">
                                 <label class="b_form--label">
                                     <input type="radio" name="data_center" data-price="40" value="1">
-                                    <span>текст чекбокса сайта</span>
+                                    <span class="tooltip" title="This is my image's tooltip message!">текст чекбокса сайта</span>
                                 </label>
                                 <label class="b_form--label">
                                     <input type="radio" name="data_center" data-price="44" value="2" checked>
-                                    <span>текст чекбокса сайта</span>
+                                    <span class="tooltip" title="This is my image's tooltip message!">текст чекбокса сайта</span>
                                 </label>
                             </div>
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
                                     <input type="radio" name="data_center_2" data-price="50" value="1" checked>
-                                    <span>Включить что то?</span>
+                                    <span class="tooltip" title="This is my image's tooltip message!">Включить что то?</span>
                                 </label>
                                 <label class="b_form--label">
                                     <input type="radio" name="data_center_2" data-price="55"  value="2">
-                                    <span>Включить что то?</span>
+                                    <span class="tooltip" title="This is my image's tooltip message!">Включить что то?</span>
                                 </label>
                             </div>
 
@@ -180,7 +180,7 @@
 
                         <div class="b_form--layout" style="width: 30%">
                             <label class="b_form--select">
-                                <select name="month">
+                                <select name="month" class="tooltip" title="This is my image's tooltip message!">
                                     <option value="2">2 МЕСЯЦА</option>
                                     <option value="3">3 МЕСЯЦА</option>
                                     <option value="4">4 МЕСЯЦА</option>

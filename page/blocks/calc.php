@@ -64,8 +64,7 @@
                                 Заголовок ползунука:
                             </h6>
                             <label class="block__range tooltip" title="This is my image's tooltip message!">
-                                <input type="range"
-                                       name="range_1"
+                                <input class="range-slider" type="range" name="range_1"
                                        data-price="7"
                                        data-slider-step="1"
                                        data-slider-value="48"
@@ -152,8 +151,7 @@
                                 Заголовок ползунука:
                             </h6>
                             <label class="block__range">
-                                <input type="range"
-                                       name="range_2"
+                                <input class="range-slider" type="range" name="range_2"
                                        data-price="3"
                                        data-slider-step="100"
                                        data-slider-value="3500"

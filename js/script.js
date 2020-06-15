@@ -1,4 +1,6 @@
 
+'use strict';
+
 let modules;
 
 $(document).ready(function ()
@@ -26,7 +28,7 @@ $(document).ready(function ()
                         console.log( 'Module not found', name );
                         continue;
                     }
-                    console.log( `Module ${name} Enabled`,  );
+                    //console.log( `Module ${name} Enabled`,  );
                 }
             }
 
@@ -268,6 +270,7 @@ $(document).ready(function ()
                 button      : '.b_config--button'
             },
 
+            // значения для калькулятора
             items       : {
                 1  : {
                         form_id     : 'server_form',
@@ -800,7 +803,7 @@ $(document).ready(function ()
 
         range       : {
 
-            selector    : 'INPUT[type="range"]',
+            selector    : 'INPUT.range-slider',
 
             collection  : {},
 
@@ -810,24 +813,21 @@ $(document).ready(function ()
 
                 if ( $range.length )
                 {
-                    let $item;
+                    const $elements = $('input.range-slider');
 
-                    for( let i in $range )
+                    for ( let i = 0; i < $elements.length; i++)
                     {
-                        $item = $($range[ i ]);
+                        let $item = $($elements[i]);
 
-                        let name        = $item.attr('name');
-
-                        let slider = $item.slider();
+                        let slider  = $item.slider();
 
                         slider.on("slide", modules.range.actions.slide );
 
-                        modules.range.collection[ name ] = slider;
+                        modules.range.collection[ $item.attr('name') ] = slider;
                     }
 
                     return STATUS_OK
                 }
-
                 return STATUS_ERR
             },
 

@@ -43,6 +43,11 @@
         left: 25%;
         right: auto;
       }
+
+      &:before{
+        left: 25%;
+        right: 25%;
+      }
     }
 
     .b_menu--link {
@@ -232,6 +237,20 @@
     min-width: 320px;
   }
 
+  .block__menu
+  {
+    .b_menu--item{
+      margin-right: 5px;
+
+      &:before {
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+
   .block__welcome
   {
     .b_welcome--title{
@@ -308,6 +327,7 @@
     }
   }
 
+
   .block__config
   {
     display: block;
@@ -337,7 +357,6 @@
   }
 
 
-
   .block__form
   {
     &.__calc {
@@ -365,7 +384,8 @@
   }
 
 
-  .block__footer {
+  .block__footer
+  {
 
     .b_footer--overlay {
       &.__padding {
@@ -394,7 +414,9 @@
 
   }
 
-  .block__social {
+
+  .block__social
+  {
       display: block;
 
     .b_social--link {

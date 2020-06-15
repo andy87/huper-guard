@@ -12,27 +12,47 @@ $(document).ready(function ()
         {
             function condition( modules, name )
             {
-                return ( typeof modules[ name ] === "object" && modules[ name ]['init'] !== undefined )
+                return ( typeof modules[ name ] === "object" && typeof modules[ name ]['init'] === "function" )
             }
 
             for( let name in modules )
             {
-                if ( condition(modules, name) )
+                if ( condition( modules, name ) )
                 {
                     if ( modules[name]['init']() === STATUS_ERR )
                     {
-                        console.log( 'Error module', name );
+                        console.log( 'Module not found', name );
                     }
                 }
             }
         },
 
+        window      : {
+
+            actions     : {
+
+                scroll      : function ( $element, time )
+                {
+                    time = time ?? 600;
+
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $element.offset().top
+                    }, time );
+                }
+            }
+        },
+
         menu        : {
+
             selectors   : {
                 block       : '.block__menu',
                 hamburger   : '.b_menu--hamburger',
                 link        : '.b_menu--link',
                 wrapper     : '.b_menu--wrapper'
+            },
+
+            links       : {
+                wrapper     : null
             },
 
             cls         : {
@@ -41,7 +61,18 @@ $(document).ready(function ()
 
             init        : function()
             {
-                this.bind();
+                let $wrapper = $(this.selectors.wrapper);
+
+                if ( $wrapper )
+                {
+                    this.bind();
+
+                    this.links.$wrapper = $wrapper;
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
             },
 
             bind        : function()
@@ -56,28 +87,27 @@ $(document).ready(function ()
                         href    = $this.attr('href'),
                         $target = $( href );
 
-                    $([document.documentElement, document.body]).animate({
-                        scrollTop: $target.offset().top
-                    }, 600);
-                } )
+                    modules.window.actions.scroll( $target );
+                    modules.menu.actions.close();
+                });
             },
 
             actions     : {
 
-                toggle : function ()
+                toggle      : function ()
                 {
-                    $(modules.menu.selectors.wrapper).toggleClass( modules.menu.cls.open );
+                    modules.menu.links.$wrapper.toggleClass( modules.menu.cls.open );
                 },
 
-                open : function ()
+                open        : function ()
                 {
-                    $(modules.menu.selectors.wrapper).addClass( modules.menu.cls.open );
+                    modules.menu.links.$wrapper.addClass( modules.menu.cls.open );
 
                 },
 
-                close : function ()
+                close       : function ()
                 {
-                    $(modules.menu.selectors.wrapper).removeClass( modules.menu.cls.open );
+                    modules.menu.links.$wrapper.removeClass( modules.menu.cls.open );
                 }
             }
         },
@@ -232,6 +262,48 @@ $(document).ready(function ()
                 button      : '.b_config--button'
             },
 
+            items       : {
+                1  : {
+                        form_id     : 'server_form',
+                        params      : {
+                            "month": 2,
+                            "data_center": 1,
+                            "data_center_2": 2,
+                            "name_server": 1,
+                            "range_1": 33,
+                            "range_2": 3333,
+                            "select_1": 2,
+                            "select_2": 3
+                        }
+                },
+                2  : {
+                        form_id     : 'server_form',
+                        params      : {
+                            "month": 3,
+                            "data_center": 2,
+                            "data_center_2": 1,
+                            "name_server": 2,
+                            "range_1": 66,
+                            "range_2": 6666,
+                            "select_1": 1,
+                            "select_2": 2
+                        }
+                },
+                3  : {
+                        form_id     : 'server_form',
+                        params      : {
+                            "month": 4,
+                            "data_center": 1,
+                            "data_center_2": 1,
+                            "name_server": 1,
+                            "range_1": 111,
+                            "range_2": 10000,
+                            "select_1": 1,
+                            "select_2": 1
+                        }
+                },
+            },
+
             init        : function ()
             {
                 if ( $(this.selectors.block).length && $(this.selectors.button).length )
@@ -246,16 +318,23 @@ $(document).ready(function ()
                 {
                     e.preventDefault();
                     const   $this   = $(this),
-                            form_id = $this.data('form_id');
+                            self    = modules.config,
+                            id      = parseInt( $this.data('id') ),
+                            form_id = self.items[id]['form_id'];
 
-                    let params  = $this.data('params');
-
-                    if ( params !== undefined )
+                    if ( id !== undefined )
                     {
-                        modules.config.actions.setup(form_id, params);
+                        let params  = self.items[id]['params'];
+
+                        if ( params !== undefined )
+                        {
+                            self.actions.setup(form_id, params);
+                        }
+
+                        $this.addClass('__active');
                     }
 
-                    $this.addClass('__active');
+
                 })
             },
 
@@ -312,24 +391,150 @@ $(document).ready(function ()
 
             selectors   : {
                 block       : '.block__form.__calc',
+                tab         : '.b_form--tab',
             },
 
             total       : '#total_price',
 
+            items       : {
+
+                // цены для категойрий
+                // value : price
+                tabs        : {
+                    1 : {
+                        "name_server": {
+                            1 : 101,
+                            2 : 102,
+                        },
+                        "range_1": 7,
+                        "select_1": {
+                            1 : 21,
+                            2 : 22,
+                            3 : 23
+                        },
+                        "select_2": {
+                            1 : 31,
+                            2 : 32,
+                            3 : 33
+                        },
+                        "data_center": {
+                            1 : 40,
+                            2 : 44
+                        },
+                        "data_center_2": {
+                            1 : 50,
+                            2 : 55
+                        },
+                        "range_2": 3,
+                    },
+
+                    2 : {
+                        "name_server": {
+                            1 : 202,
+                            2 : 204,
+                        },
+                        "range_1": 14,
+                        "select_1": {
+                            1 : 42,
+                            2 : 44,
+                            3 : 46
+                        },
+                        "select_2": {
+                            1 : 62,
+                            2 : 64,
+                            3 : 66
+                        },
+                        "data_center": {
+                            1 : 80,
+                            2 : 88
+                        },
+                        "data_center_2": {
+                            1 : 100,
+                            2 : 110
+                        },
+                        "range_2": 6,
+                    },
+                }
+            },
+
             init        : function ()
             {
                 this.bind();
+
+                return STATUS_OK
             },
 
             bind        : function ()
             {
                 $(this.selectors.block).on('change', 'INPUT, SELECT', this.actions.calc );
+
+                $(this.selectors.tab).on('click', function (e)
+                {
+                    e.preventDefault();
+
+                    modules.form.actions.set_price( $(this).data('id') );
+                });
             },
 
             actions     : {
 
+                set_price   : function( id )
+                {
+                    const   self    = modules.form,
+                        cls         = '__active',
+                        prices      = self.items.tabs[ id ];
+
+                    $(self.selectors.tab + `.${cls}` ).removeClass(cls);
+
+                    function lib_prices( $element, lib )
+                    {
+                        $.each( lib, function (value, price)
+                        {
+                            $element.find(`[value="{$value}"]`).attr('data-price', price).data('price', price );
+                        });
+                    }
+
+                    for( let name in prices )
+                    {
+                        let priceLib    = prices[name],
+                            $element    = $(`[name="${name}"]`);
+
+                        if ( $element.length )
+                        {
+                            let tag = $element[0].tagName;
+
+                            if ( tag === 'SELECT' )
+                            {
+                                lib_prices( $element, priceLib );
+
+                            } else if ( tag === 'INPUT' ) {
+
+                                switch  ( $element.attr('type') )
+                                {
+                                    case 'range':
+                                        $element.attr('data-price', priceLib).data('price', priceLib );
+                                        break;
+
+                                    case 'radio':
+                                    case 'checkbox':
+                                        lib_prices( $element, priceLib );
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    $(self.selectors.tab + `[data-id="${id}"]`).addClass( cls );
+
+                    self.actions.calc();
+
+                    return false;
+                },
+
                 calc        : function (e)
                 {
+                    e = e ?? window.event;
+
                     const $form = $(modules.form.selectors.block),
                         $items  = $form.find('[data-price]:checked, OPTION[data-price]:selected, [type=range][data-price]'),
                         month   = parseInt( $form.find('[name="month"]')[0].value );
@@ -356,112 +561,10 @@ $(document).ready(function ()
 
                     totalPrice = totalPrice * month;
 
-                    $(modules.form.total).text( totalPrice );
+                    $(modules.form.total).text( totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") );
                 }
             }
 
-        },
-
-        input       : {
-
-            selector    : {
-                input       : '.b_form--input',
-                range       : 'INPUT.range',
-            },
-
-            init        : function ()
-            {
-                if ( $( this.selector.input ).length )
-                {
-                    this.bind();
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            bind        : function()
-            {
-                $( this.selector.range ).on('change', function (e)
-                {
-                    modules.input.actions.change( $(this) );
-
-                } );
-            },
-
-            actions     : {
-
-                change  : function ( $item )
-                {
-                    let value = $item.val().replace(/\s/g, '');
-
-                    //спасибо ciprex_
-                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-                    $item.val( result );
-
-                    if ( $item.data('target') )
-                    {
-                        modules.range.actions.setValue( $item.data('target'), value );
-                    }
-                }
-            }
-        },
-
-        range       : {
-
-            selector    : 'INPUT[type="range"]',
-
-            collection  : {},
-
-            init        : function ()
-            {
-                const $range    = $( this.selector );
-
-                if ( $range.length )
-                {
-                    let $item;
-
-                    setTimeout(function ()
-                    {
-                        for( let i in $range )
-                        {
-                            $item = $($range[ i ]);
-
-                            let name        = $item.attr('name');
-
-                            $item.getAttribute = {};
-
-                            let slider = $item.slider();
-
-                            slider.on("slide", modules.range.actions.slide );
-
-                            modules.range.collection[ name ] = slider;
-                        }
-                    }, 1000);
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            actions     : {
-
-                slide       : function (e)
-                {
-                    const $this     = $( this ),
-                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
-
-                    $( selector ).val( e.value ).change();
-                },
-
-                setValue    : function ( slider_name, value )
-                {
-                    modules.range.collection[ slider_name ].slider('setValue', value );
-                }
-            },
         },
 
         partners    : {
@@ -584,45 +687,149 @@ $(document).ready(function ()
 
                 open            : function( id )
                 {
-                    const   $block__modal   = modules.modal.links.$block,
-                        $modal          = $( id );
+                    const $modal        = $( id ),
+                        $block__modal   = modules.modal.links.$block;
 
                     if ( ! $modal.length ) return;
 
                     if ( $block__modal.is(":hidden") )
                     {
-                        $block__modal.show();
-                    }
+                        $block__modal.show(function ()
+                        {
+                            $modal.addClass('__open');
+                        });
 
-                    $modal.show();
+                    } else {
+                        $modal.addClass('__open');
+                    }
                 },
 
                 closer_overlay  : function(e)
                 {
                     if ( e.target !== e.currentTarget ) return;
 
-                    modules.modal.links.$windows.filter(":visible").hide();
+                    modules.modal.links.$windows.removeClass('__open');
 
-                    modules.modal.actions.close_modal();
+                    modules.modal.actions.hide_overlay();
                 },
 
                 closer      : function(e)
                 {
-                    $(this).parents( modules.modal.selectors.window ).hide();
+                    $(this).parents( modules.modal.selectors.window ).removeClass('__open');
 
-                    modules.modal.actions.close_modal();
+                    setTimeout(function ()
+                    {
+                        modules.modal.actions.hide_overlay();
+                    }, 500)
                 },
 
-                close_modal : function ()
+                hide_overlay : function ()
                 {
                     const self = modules.modal;
 
-                    if ( ! self.links.$windows.filter(":visible").length )
+                    if ( ! self.links.$windows.filter(".__open").length )
                     {
                         self.links.$block.hide();
                     }
                 }
             }
+        },
+
+        input       : {
+
+            selector    : {
+                input       : '.b_form--input',
+                range       : 'INPUT.range',
+            },
+
+            init        : function ()
+            {
+                if ( $( this.selector.input ).length )
+                {
+                    this.bind();
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            bind        : function()
+            {
+                $( this.selector.range ).on('change', function (e)
+                {
+                    modules.input.actions.change( $(this) );
+
+                } );
+            },
+
+            actions     : {
+
+                change  : function ( $item )
+                {
+                    let value = $item.val().replace(/\s/g, '');
+
+                    //спасибо ciprex_
+                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+                    $item.val( result );
+
+                    if ( $item.data('target') )
+                    {
+                        modules.range.actions.setValue( $item.data('target'), value );
+                    }
+                }
+            }
+        },
+
+        range       : {
+
+            selector    : 'INPUT[type="range"]',
+
+            collection  : {},
+
+            init        : function ()
+            {
+                const $range    = $( this.selector );
+
+                if ( $range.length )
+                {
+                    let $item;
+
+                    for( let i in $range )
+                    {
+                        $item = $($range[ i ]);
+
+                        let name        = $item.attr('name');
+
+                        let slider = $item.slider();
+
+                        slider.on("slide", modules.range.actions.slide );
+
+                        modules.range.collection[ name ] = slider;
+                    }
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            actions     : {
+
+                slide       : function (e)
+                {
+                    const $this     = $( this ),
+                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
+
+                    $( selector ).val( e.value ).change();
+                },
+
+                setValue    : function ( slider_name, value )
+                {
+                    modules.range.collection[ slider_name ].slider('setValue', value );
+                }
+            },
         },
     };
 

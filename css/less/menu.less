@@ -81,8 +81,8 @@
   }
 
 
-  .block__menu {
-
+  .block__menu
+  {
     .b_menu--wrapper {
       position: absolute;
       z-index: 777;
@@ -96,12 +96,23 @@
       &.__open {
         left: 0;
       }
+
+      .b_menu--item {
+
+        &:before {
+          bottom: 0;
+          right: 0;
+          left: 0;
+        }
+      }
     }
 
     .b_menu--item {
       display: block;
       padding-left: 5px;
       border-bottom: 1px solid #1d5cac;
+
+
 
       &.__active {
         padding-left: 15px;

@@ -479,6 +479,11 @@ H6 {
   .block__menu .b_menu--wrapper.__open {
     left: 0;
   }
+  .block__menu .b_menu--wrapper .b_menu--item:before {
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
   .block__menu .b_menu--item {
     display: block;
     padding-left: 5px;
@@ -1536,11 +1541,16 @@ H6 {
   background-color: rgba(0, 0, 0, 0.61);
 }
 .b_modal--window {
-  display: none;
+  display: block;
   min-width: 520px;
   padding: 15px 30px;
   border-radius: 10px;
   background: #011127 url("/img/background/modal.png") right bottom no-repeat;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+.b_modal--window.__open {
+  opacity: 1;
 }
 .b_modal--header {
   position: relative;
@@ -1623,6 +1633,10 @@ H6 {
     bottom: 5px;
     left: 25%;
     right: auto;
+  }
+  .block__menu .b_menu--item:before {
+    left: 25%;
+    right: 25%;
   }
   .block__menu .b_menu--link {
     padding: 5px;
@@ -1750,6 +1764,14 @@ H6 {
 @media (max-width: 640px) {
   #wrap {
     min-width: 320px;
+  }
+  .block__menu .b_menu--item {
+    margin-right: 5px;
+  }
+  .block__menu .b_menu--item:before {
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .block__welcome .b_welcome--title {
     margin-top: 0;

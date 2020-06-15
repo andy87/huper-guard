@@ -20,11 +20,17 @@
 }
 
 .b_modal--window {
-  display: none;
+  display: block;
   min-width: 520px;
   padding: 15px 30px;
   border-radius: 10px;
   background: #011127 url("/img/background/modal.png") right bottom no-repeat;
+  opacity: 0;
+  transition: all .5s linear;
+
+  &.__open {
+    opacity: 1;
+  }
 }
 
 .b_modal--header {
@@ -35,9 +41,11 @@
   font-size: 21px;
   font-weight: 800;
 }
+
 .b_modal--title {
   display: block;
 }
+
 .b_modal--closer {
   position: absolute;
   top: 0;

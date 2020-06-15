@@ -16,7 +16,7 @@
 
             <div class="b_calc--layout">
                 <h3>Конфигуратор<br>сервера</h3>
-                <a class="color button __border js-modal" href="#calc">
+                <a class="color button __border js-modal" href="#modal_form">
                     <span>Индивидуальная</span>
                 </a>
             </div>
@@ -27,8 +27,13 @@
 
                     <div class="b_form--row">
 
-                        <a class="b_form--tab" href="#">Виртуальный сервер</a>
-                        <a class="b_form--tab __active" href="#">Виртуальный сервер</a>
+                        <a class="b_form--tab" href="#" data-id='1'>
+                            Виртуальный сервер
+                        </a>
+
+                        <a class="b_form--tab __active" href="#" data-id='2'>
+                            Виртуальный сервер
+                        </a>
 
                     </div>
 

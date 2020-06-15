@@ -24,6 +24,7 @@
                             </a>
 
                             <? include "page/blocks/menu.php" ?>
+
                         </div>
 
                         <? include "page/blocks/welcome.php" ?>
@@ -34,7 +35,6 @@
                     <span class="b_header--dots __sm"></span>
 
                 </header>
-
 
                 <? include "page/blocks/benefit.php" ?>
 

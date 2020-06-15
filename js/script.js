@@ -473,6 +473,10 @@ $(document).ready(function ()
             {
                 this.bind();
 
+                let id = parseInt( $(this.selectors.tab).filter('.__active').data('id') );
+
+                this.actions.set_price( id );
+
                 return STATUS_OK
             },
 

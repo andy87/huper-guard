@@ -3,8 +3,6 @@
 
 <script type="text/javascript" src="/js/plugins/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/js/plugins/bootstrap-slider.js"></script>
-
 <script type="text/javascript" src="/js/plugins/tooltipster.bundle.min.js"></script>
-<!--script type="text/javascript" src="/js/plugins/tooltipster.main.min.js"></script-->
 
 <script type="text/javascript" src="/js/script.js"></script>

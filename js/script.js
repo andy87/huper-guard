@@ -89,14 +89,19 @@ $(document).ready(function ()
 
                 $(this.selectors.link).on('click', function (e)
                 {
-                    e.preventDefault();
-
                     const $this = $(this),
                         href    = $this.attr('href'),
                         $target = $( href );
 
-                    modules.window.actions.scroll( $target );
-                    modules.menu.actions.close();
+                    if ( href !== '/' && href.indexOf('#') === 0 )
+                    {
+                        e.preventDefault();
+
+                        modules.window.actions.scroll( $target );
+
+                        modules.menu.actions.close();
+                    }
+
                 });
             },
 

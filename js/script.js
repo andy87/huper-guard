@@ -574,6 +574,112 @@ $(document).ready(function ()
 
         },
 
+        input       : {
+
+            selector    : {
+                input       : '.b_form--input',
+                range       : 'INPUT.range',
+            },
+
+            init        : function ()
+            {
+                if ( $( this.selector.input ).length )
+                {
+                    this.bind();
+
+                    return STATUS_OK
+                }
+
+                return STATUS_ERR
+            },
+
+            bind        : function()
+            {
+                $( this.selector.range ).on('change', function (e)
+                {
+                    modules.input.actions.change( $(this) );
+
+                } );
+            },
+
+            actions     : {
+
+                change  : function ( $item )
+                {
+                    let value = $item.val().replace(/\s/g, '');
+
+                    //спасибо ciprex_
+                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+                    $item.val( result );
+
+                    if ( $item.data('target') )
+                    {
+                        modules.range.actions.setValue( $item.data('target'), value );
+                    }
+                }
+            }
+        },
+
+        tooltips    : {
+
+            init        : function ()
+            {
+                $('.tooltip').tooltipster({
+                    animation   : 'fade',
+                    delay       : 200,
+                    theme       : 'tooltipster-borderless'
+                });
+            }
+        },
+
+        range       : {
+
+            selector    : 'INPUT.range-slider',
+
+            collection  : {},
+
+            init        : function ()
+            {
+                const $range    = $( this.selector );
+
+                if ( $range.length )
+                {
+                    const $elements = $('input.range-slider');
+
+                    for ( let i = 0; i < $elements.length; i++)
+                    {
+                        let $item = $($elements[i]);
+
+                        let slider  = $item.slider();
+
+                        slider.on("slide", modules.range.actions.slide );
+
+                        modules.range.collection[ $item.attr('name') ] = slider;
+                    }
+
+                    return STATUS_OK
+                }
+                return STATUS_ERR
+            },
+
+            actions     : {
+
+                slide       : function (e)
+                {
+                    const $this     = $( this ),
+                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
+
+                    $( selector ).val( e.value ).change();
+                },
+
+                setValue    : function ( slider_name, value )
+                {
+                    modules.range.collection[ slider_name ].slider('setValue', value );
+                }
+            },
+        },
+
         partners    : {
 
             selectors   : {
@@ -740,112 +846,6 @@ $(document).ready(function ()
                     }
                 }
             }
-        },
-
-        input       : {
-
-            selector    : {
-                input       : '.b_form--input',
-                range       : 'INPUT.range',
-            },
-
-            init        : function ()
-            {
-                if ( $( this.selector.input ).length )
-                {
-                    this.bind();
-
-                    return STATUS_OK
-                }
-
-                return STATUS_ERR
-            },
-
-            bind        : function()
-            {
-                $( this.selector.range ).on('change', function (e)
-                {
-                    modules.input.actions.change( $(this) );
-
-                } );
-            },
-
-            actions     : {
-
-                change  : function ( $item )
-                {
-                    let value = $item.val().replace(/\s/g, '');
-
-                    //спасибо ciprex_
-                    const result = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-                    $item.val( result );
-
-                    if ( $item.data('target') )
-                    {
-                        modules.range.actions.setValue( $item.data('target'), value );
-                    }
-                }
-            }
-        },
-
-        tooltips    : {
-
-            init        : function ()
-            {
-                $('.tooltip').tooltipster({
-                    animation   : 'fade',
-                    delay       : 200,
-                    theme       : 'tooltipster-borderless'
-                });
-            }
-        },
-
-        range       : {
-
-            selector    : 'INPUT.range-slider',
-
-            collection  : {},
-
-            init        : function ()
-            {
-                const $range    = $( this.selector );
-
-                if ( $range.length )
-                {
-                    const $elements = $('input.range-slider');
-
-                    for ( let i = 0; i < $elements.length; i++)
-                    {
-                        let $item = $($elements[i]);
-
-                        let slider  = $item.slider();
-
-                        slider.on("slide", modules.range.actions.slide );
-
-                        modules.range.collection[ $item.attr('name') ] = slider;
-                    }
-
-                    return STATUS_OK
-                }
-                return STATUS_ERR
-            },
-
-            actions     : {
-
-                slide       : function (e)
-                {
-                    const $this     = $( this ),
-                        selector    = 'INPUT[name="' + $this.data('target') + '"]';
-
-                    $( selector ).val( e.value ).change();
-                },
-
-                setValue    : function ( slider_name, value )
-                {
-                    modules.range.collection[ slider_name ].slider('setValue', value );
-                }
-            },
         },
     };
 

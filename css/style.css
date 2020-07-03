@@ -1102,8 +1102,7 @@ H6 {
   position: relative;
   margin-bottom: 20px;
 }
-.b_form--radio .b_form--label INPUT[type="radio"],
-.b_form--radio .b_form--label INPUT[type="checkbox"] {
+.b_form--radio .b_form--label INPUT {
   position: absolute;
   z-index: -1;
   opacity: 0;

@@ -9,26 +9,26 @@ class Partner {
 
 $collectionPartner[] = (object) [
     'svg'   => 'safety',
-    'title' => 'Высокая надежность',
-    'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. ',
+    'title' => 'Надежность',
+    'text'  => 'Регулярный мониторинг состояния сервера и профессиональное тех.обслуживание гарантируют бесперебойное функционирование проекта с аптаймом 99,5%. ',
 ];
 
 $collectionPartner[] = (object) [
     'svg'   => 'support',
-    'title' => 'Высокая надежность',
-    'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. ',
+    'title' => 'Поддержка',
+    'text'  => 'Сотрудники HyperGuard готовы ответить на любой вопрос и проконсультировать по поводу всего, что связано с предоставляемыми услугами. ',
 ];
 
 $collectionPartner[] = (object) [
     'svg'   => 'devices',
-    'title' => 'Премиум оборудования',
-    'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. ',
+    'title' => 'Премиум оборудование',
+    'text'  => 'Многоядерные процессоры в сочетании с быстрой оперативной памятью и молниеносными SSD-накопителями обеспечат проекту гиперскоростную работу. ',
 ];
 
 $collectionPartner[] = (object) [
     'svg'   => 'traffic',
     'title' => 'Без перегона трафика',
-    'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. ',
+    'text'  => 'Все проекты на наших серверах защищены от DDoS-атак. Фильтрация осуществляется в России, без переадресации трафика в другие страны.',
 ];
 
 ?>
@@ -44,7 +44,7 @@ $collectionPartner[] = (object) [
             <? foreach ( $collectionPartner as $partner ) : ?>
 
             <li class="b_benefit--item">
-                <img class="b_benefit--img" src="/img/icon/traffic.svg" alt="картинка на фоне">
+                <img class="b_benefit--img" src="/img/icon/<?= $partner->svg?>.svg" alt="картинка на фоне">
 
                 <div class="b_benefit--layout">
                     <img class="b_benefit--ball" src="/img/decor/sphere.png" alt="Сфера">

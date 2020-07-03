@@ -59,13 +59,15 @@
     position: relative;
     margin-bottom: 20px;
 
-    INPUT[type="radio"]{
+    INPUT[type="radio"],
+    INPUT[type="checkbox"]{
       position: absolute;
       z-index: -1;
       opacity: 0;
     }
 
-    INPUT + SPAN {
+    INPUT[type="radio"] + SPAN,
+    INPUT[type="checkbox"] + SPAN {
       display: inline-block;
       padding-left: 30px;
       color: #fff;
@@ -82,8 +84,15 @@
         content: '';
         width: 18px;
         height: 18px;
-        background: url("/img/sprites/radio.png") transparent bottom center no-repeat;
       }
+    }
+
+    INPUT[type="radio"] + SPAN:before {
+      background: url("/img/sprites/radio.png") transparent bottom center no-repeat;
+    }
+
+    INPUT[type="checkbox"] + SPAN:before {
+      background: url("/img/sprites/checkbox.png") transparent bottom center no-repeat;
     }
 
     INPUT:checked + SPAN:before {

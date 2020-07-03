@@ -280,14 +280,13 @@ $(document).ready(function ()
                 1  : {
                         form_id     : 'server_form',
                         params      : {
-                            "month": 2,
+                            "month": 1,
                             "data_center": 1,
                             "data_center_2": 2,
                             "name_server": 1,
-                            "range_1": 33,
-                            "range_2": 3333,
-                            "select_1": 2,
-                            "select_2": 3
+                            "range_1": 30,
+                            "range_cores": 4,
+                            "select_1": 150
                         }
                 },
                 2  : {
@@ -404,6 +403,7 @@ $(document).ready(function ()
             selectors   : {
                 block       : '.block__form.__calc',
                 tab         : '.b_form--tab',
+                label       : '.b_form--label'
             },
 
             total       : '#total_price',
@@ -415,20 +415,26 @@ $(document).ready(function ()
                 tabs        : {
                     1 : {
                         "name_server": {
-                            1 : 101,
+                            1 : 0,
                             2 : 102,
                         },
-                        "range_1": 7,
+                        "range_3": 200,
                         "select_1": {
-                            1 : 21,
-                            2 : 22,
-                            3 : 23
+                            1 : 0,
+                            2 : 0,
+                            3 : 0,
+                            4 : 0,
+                            5 : 0,
+                            6 : 0,
+                            7 : 0,
+                            8 : 0,
+                            9 : 0,
+                            10 : 0,
+                            11 : 0,
+                            12 : 0
                         },
-                        "select_2": {
-                            1 : 31,
-                            2 : 32,
-                            3 : 33
-                        },
+                        "range_1": 40,
+                        "range_cores": 400,
                         "data_center": {
                             1 : 40,
                             2 : 44
@@ -437,34 +443,7 @@ $(document).ready(function ()
                             1 : 50,
                             2 : 55
                         },
-                        "range_2": 3,
-                    },
-
-                    2 : {
-                        "name_server": {
-                            1 : 202,
-                            2 : 204,
-                        },
-                        "range_1": 14,
-                        "select_1": {
-                            1 : 42,
-                            2 : 44,
-                            3 : 46
-                        },
-                        "select_2": {
-                            1 : 62,
-                            2 : 64,
-                            3 : 66
-                        },
-                        "data_center": {
-                            1 : 80,
-                            2 : 88
-                        },
-                        "data_center_2": {
-                            1 : 100,
-                            2 : 110
-                        },
-                        "range_2": 6,
+                        "range_2": 150,
                     },
                 }
             },

@@ -131,11 +131,11 @@
 
                             <div class="b_form--layout">
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2" data-price="50" value="1" checked>
+                                    <input type="checkbox" name="data_center_2_1" data-price="50" value="1" checked>
                                     <span class="tooltip" title="This is my image's tooltip message!">Включить что то?</span>
                                 </label>
                                 <label class="b_form--label">
-                                    <input type="radio" name="data_center_2" data-price="55"  value="2">
+                                    <input type="checkbox" name="data_center_2_2" data-price="55"  value="2">
                                     <span class="tooltip" title="This is my image's tooltip message!">Включить что то?</span>
                                 </label>
                             </div>

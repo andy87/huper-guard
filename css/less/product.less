@@ -15,8 +15,9 @@
   position: relative;
   display: inline-block;
   width: 262px;
-  padding-top: 25px;
   margin-bottom: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
   overflow: hidden;
   .hover_background();
 
@@ -26,6 +27,7 @@
     }
   }
 }
+
 .b_product--img {
   display: block;
   position: relative;
@@ -57,7 +59,8 @@
 }
 
 .b_product--button {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 3;
   display: block;
   height: 44px;
@@ -70,7 +73,7 @@
   text-align: center;
   background: #1854a3;
   box-shadow: inset 0 0 10px #2C7EC7;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   cursor: pointer;
 
   &:hover,
